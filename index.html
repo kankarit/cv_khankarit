@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khankarit Nipornram (Note) - Premium Interactive Portfolio</title>
-    <!-- Tailwind CSS -->
+    <title>Khankarit Nipornram</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Premium Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Noto Sans Thai & Inter for supreme readability -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -113,7 +110,7 @@
         <div class="space-y-6 md:space-y-8 print-full-width">
             
             <div id="sticky-header-wrapper" class="fixed top-0 left-0 right-0 z-50 pointer-events-none">
-                <header id="sticky-header" class="w-full max-w-4xl mx-auto px-4 transition-all duration-300 opacity-0 pointer-events-none">
+                <header id="sticky-header" class="w-full max-w-7xl mx-auto px-4 transition-all duration-300 opacity-0 pointer-events-none">
                     <div class="mt-4 bg-white/80 backdrop-blur-xl border border-brand-200/60 shadow-lg rounded-2xl px-4 py-2 flex items-center gap-3">
                         <img src="assets/profile.png" class="w-8 h-8 rounded-full">
                         <h2 class="font-bold truncate">นายขรรคฤทธิ์ นิพรรัมย์</h2>
@@ -123,50 +120,47 @@
                         
             <!-- ELEGANT HEADER BLOCK START -->
             <div id="main-header" class="transition-opacity duration-300 ease-in-out bg-white rounded-3xl p-6 md:p-10 border border-brand-200/60 shadow-premium-soft transition-all duration-300 print-full-width relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-skyAccent-500/5 rounded-full blur-3xl -z-10"></div>
-                
-                <div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 print-full-width">
-                    <!-- Circular avatar with custom glow border -->
-                    <div class="relative group flex-shrink-0">
-                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-skyAccent-100 shadow-glow relative bg-slate-100 flex items-center justify-center">
-                            <img id="profilePreview" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105" 
-                                 src="assets/profile.png" 
-                                 alt="Khankarit Nipornram Profile">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-skyAccent-500/5 rounded-full blur-3xl -z-10 space-y-3"></div>
+
+                <!-- test -->
+                <div class="grid grid-cols-[auto_1fr] items-center gap-4 print-full-width">
+                    <!-- ฝั่งซ้าย: รูปโปรไฟล์ -->
+                    <div class="relative group">
+                        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-skyAccent-100 shadow-glow relative bg-slate-100 flex items-center justify-center">
+                            <img id="profilePreview" class="w-full h-full object-cover" 
+                                src="assets/profile.png" 
+                                alt="Khankarit Nipornram Profile">
                             
-                            <!-- Hidden File Input for photo customization -->
-                            <div class="no-print absolute inset-0 bg-brand-950/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center text-center p-2 cursor-pointer" onclick="document.getElementById('profileImageInput').click()">
-                                <i class="fa-solid fa-camera text-xl mb-1 text-skyAccent-400"></i>
-                                <span class="text-[9px] font-semibold text-white tracking-wider uppercase">อัปโหลดรูป</span>
+                            <div class="no-print absolute inset-0 bg-brand-950/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center p-1 cursor-pointer" onclick="document.getElementById('profileImageInput').click()">
+                                <i class="fa-solid fa-camera text-sm text-skyAccent-400"></i>
+                                <span class="text-[8px] font-semibold text-white uppercase">เปลี่ยน</span>
                             </div>
                         </div>
                         <input type="file" id="profileImageInput" accept="image/*" class="hidden" onchange="previewImage(event)">
                     </div>
 
-                    <!-- Executive Info & Narrative Details -->
-                    <div class="flex-grow text-center md:text-left space-y-4 w-full">
+                    <!-- ฝั่งขวา: ข้อมูลส่วนตัว (เปลี่ยนจาก mx-auto เป็น items-start) -->
+                    <div class="flex flex-col items-start justify-center space-y-2">
                         <div>
-                            <!-- Headline Name in Bold Navy -->
-                            <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-brand-950" contenteditable="false" id="field-fullname-th">
-                                นายขรรคฤทธิ์ นิพรรัมย์ <span class="text-skyAccent-600 font-medium text-xl md:text-2xl">(โน้ต)</span>
+                            <h2 class="text-lg md:text-2xl font-extrabold tracking-tight text-brand-950 leading-tight">
+                                นายขรรคฤทธิ์ นิพรรัมย์ <span class="text-skyAccent-600 text-xs md:text-sm font-medium">(โน้ต)</span>
                             </h2>
-                            <!-- English name subtitle -->
-                            <h3 class="text-sm md:text-base font-semibold text-slate-500 tracking-wide mt-0.5" contenteditable="false" id="field-fullname-en">
+                            <h3 class="text-xs md:text-base font-semibold text-slate-500 tracking-wide mt-1">
                                 Khankarit Nipornram
                             </h3>
                         </div>
 
-                        <!-- Pill Badges as seen in the reference screenshot -->
-                        <div class="flex flex-wrap justify-center md:justify-start gap-1.5 md:gap-2">
-                            <span class="bg-skyAccent-50 text-skyAccent-700 text-[11px] font-bold px-3.5 py-1.5 rounded-full border border-skyAccent-100 tracking-wide">
-                                <i class="fa-solid fa-briefcase text-[10px] mr-1"></i> นักวิชาการสาธารณสุข (เวชสถิติ)
+                        <div class="flex">
+                            <span class="bg-skyAccent-50 text-skyAccent-700 text-[10px] md:text-xs font-bold px-3 py-1 rounded-full border border-skyAccent-100 flex items-center">
+                                <i class="fa-solid fa-briefcase mr-1.5"></i> นักวิชาการสาธารณสุข (เวชสถิติ)
                             </span>
                         </div>
-
-                        
                     </div>
                 </div>
+                <!-- test -->
             </div>
-                    <!-- SUMMARY CARD START -->
+
+            <!-- SUMMARY CARD START -->
             <div class="bg-white p-6 md:p-8 rounded-3xl border border-brand-200/60 shadow-premium-soft mb-6">
                 <h4 class="text-xs font-bold text-brand-950 tracking-widest uppercase border-b border-brand-200 pb-3 mb-4 flex items-center gap-2">
                     <i class="fa-solid fa-user-pen text-skyAccent-600"></i> แนะนำตัว 
@@ -202,8 +196,54 @@
                     </li>
                 </ul>
             </div>
-                    <!-- SUMMARY CARD END -->
-            <!-- ELEGANT HEADER BLOCK END -->
+
+            <!-- STATS GRID SECTION START -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+
+                    <!-- Card 3: ประสบการณ์ -->
+                <div class="bg-white p-5 rounded-3xl border border-brand-200/60 shadow-premium-soft flex flex-col gap-2">
+                    <i class="fa-solid fa-briefcase text-skyAccent-600 text-lg"></i>
+                    <div>
+                        <h5 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">ประสบการณ์</h5>
+                        <p class="text-xs font-bold text-brand-950 mt-0.5">3 ปี 2 เดือน</p>
+                        <p class="text-[10px] text-slate-400">ณ รพ.โนนดินแดง</p>
+                    </div>
+                </div>
+
+                
+                <!-- Card 1: การศึกษา -->
+                <div class="bg-white p-5 rounded-3xl border border-brand-200/60 shadow-premium-soft flex flex-col gap-2">
+                    <i class="fa-solid fa-graduation-cap text-skyAccent-600 text-lg"></i>
+                    <div>
+                        <h5 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">การศึกษา</h5>
+                        <p class="text-xs font-bold text-brand-950 mt-0.5">วท.บ.สาขาวิชาเวชระเบียน</p>
+                        <p class="text-[10px] text-emerald-600 font-semibold">เกียรตินิยมอันดับ 2</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: GPA -->
+                <div class="bg-white p-5 rounded-3xl border border-brand-200/60 shadow-premium-soft flex flex-col gap-2">
+                    <i class="fa-solid fa-chart-line text-skyAccent-600 text-lg"></i>
+                    <div>
+                        <h5 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">GPA (GPAX)</h5>
+                        <p class="text-sm font-extrabold text-emerald-600 mt-0.5">3.57</p>
+                        <p class="text-[10px] text-slate-400">เกรดเฉลี่ยสะสม</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: อัปเดตล่าสุด -->
+                <div class="bg-white p-5 rounded-3xl border border-brand-200/60 shadow-premium-soft flex flex-col gap-2">
+                    <i class="fa-solid fa-code-branch text-skyAccent-600 text-lg"></i>
+                    <div>
+                        <h5 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">ความเชี่ยวชาญหลัก</h5>
+                        <p class="text-xs font-bold text-brand-950 mt-0.5">Coding & Data</p>
+                        <p class="text-[10px] text-slate-400">การให้รหัสและการจัดการข้อมูล</p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- STATS GRID SECTION END -->
+
 
             <!-- TWO COLUMNS GRID LAYOUT -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start print-grid">
