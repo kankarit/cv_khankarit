@@ -692,14 +692,14 @@
                                     </div>
                                     <h5 class="font-extrabold text-brand-950 text-sm flex items-center gap-1.5 leading-tight">
                                         <i class="fa-solid fa-gears text-skyAccent-500 text-xs"></i>
-                                        ระบบรายงานประกันสังคมอัตโนมัติ
+                                        ระบบรายงานประกันสังคมอัตโนมัติ (สปส 2-15 และ สปส 2-09)
                                     </h5>
                                     <p class="text-slate-500 text-xs leading-relaxed font-light line-clamp-3">
-                                        พัฒนาการเชื่อมโยงระบบรายงาน โดยเชื่อมต่อดึงข้อมูลโดยตรงจากระบบสารสนเทศโรงพยาบาล (HIS) เพื่อสร้างรายงานเอกสาร สปส 2-15 และ สปส 2-09 โดยอัตโนมัติ
+                                       เชื่อมโยงข้อมูลจากระบบสารสนเทศโรงพยาบาล (HIS) เพื่อสร้างรายงานเอกสาร สปส 2-15 และ สปส 2-09 ช่วยลดเวลาการทำเอกสารลง 80%
                                     </p>
                                 </div>
                                 <div class="pt-4 mt-2 border-t border-brand-100/60 flex justify-between items-center text-[10px]">
-                                    <span class="font-medium text-slate-400">เครื่องมือ: HIS Sync, SQL</span>
+                                    <span class="font-medium text-slate-400">เครื่องมือ: MySQL, Report Designer</span>
                                     <span class="text-skyAccent-600 font-bold flex items-center gap-1 hover:text-skyAccent-700">อ่านต่อ <i class="fa-solid fa-chevron-right text-[7px]"></i></span>
                                 </div>
                             </div>
@@ -712,14 +712,14 @@
                                     </div>
                                     <h5 class="font-extrabold text-brand-950 text-sm flex items-center gap-1.5 leading-tight">
                                         <i class="fa-solid fa-bell text-skyAccent-500 text-xs"></i>
-                                        ระบบแจ้งเตือนผ่าน Telegram Alerts
+                                        ระบบส่งข้อมูลแจ้งเตือนผ่าน Line messaging api
                                     </h5>
                                     <p class="text-slate-500 text-xs leading-relaxed font-light line-clamp-3">
-                                        ออกแบบคำสั่ง SQL สแกนตรวจสอบความผิดพลาดด้านเวชระเบียนแบบอัตโนมัติ และยิงแจ้งเตือนผ่าน API ของ Telegram เข้ากลุ่มทำงานเจ้าหน้าที่เพื่อสกัดกั้นข้อมูลคลาดเคลื่อนก่อนส่งอุทธรณ์
+                                       พัฒนาระบบดึงข้อมูลจากฐานข้อมูลเพื่อแจ้งเตือนสถานะงานหรือความผิดพลาดทางเวชระเบียนแบบ Real-time เข้าสู่กลุ่ม Line ของเจ้าหน้าที่
                                     </p>
                                 </div>
                                 <div class="pt-4 mt-2 border-t border-brand-100/60 flex justify-between items-center text-[10px]">
-                                    <span class="font-medium text-slate-400">เครื่องมือ: SQL, Telegram API</span>
+                                    <span class="font-medium text-slate-400">เครื่องมือ: Line Nodejs</span>
                                     <span class="text-skyAccent-600 font-bold flex items-center gap-1 hover:text-skyAccent-700">อ่านต่อ <i class="fa-solid fa-chevron-right text-[7px]"></i></span>
                                 </div>
                             </div>
@@ -732,14 +732,14 @@
                                     </div>
                                     <h5 class="font-extrabold text-brand-950 text-sm flex items-center gap-1.5 leading-tight">
                                         <i class="fa-solid fa-shield-virus text-skyAccent-500 text-xs"></i>
-                                        ปรับปรุงการจัดเก็บรายได้ & แก้ไข CV Deny
+                                        ปรับปรุงกระบวนการจัดเก็บรายได้ของโรงพยาบาล
                                     </h5>
                                     <p class="text-slate-500 text-xs leading-relaxed font-light line-clamp-3">
-                                        พัฒนากระบวนการตรวจสอบข้อมูลตามมาตรฐานคุณภาพ เรียกเก็บค่ารักษาพยาบาลกองทุนต่างๆ และอุทธรณ์การปฏิเสธเคลมชดเชยค่ารักษาพยาบาล CV Deny เพื่อทวงคืนรายรับของโรงพยาบาล
+                                       เปลี่ยนกระบวนการตรวจสอบเอกสารการเบิกจ่ายจากรูปแบบกระดาษสู่ระบบดิจิทัลเต็มรูปแบบ
                                     </p>
                                 </div>
                                 <div class="pt-4 mt-2 border-t border-brand-100/60 flex justify-between items-center text-[10px]">
-                                    <span class="font-medium text-slate-400">เครื่องมือ: AAA, RCM Data Audit</span>
+                                    <span class="font-medium text-slate-400">เครื่องมือ: Program AAA</span>
                                     <span class="text-skyAccent-600 font-bold flex items-center gap-1 hover:text-skyAccent-700">อ่านต่อ <i class="fa-solid fa-chevron-right text-[7px]"></i></span>
                                 </div>
                             </div>
@@ -752,14 +752,34 @@
                                     </div>
                                     <h5 class="font-extrabold text-brand-950 text-sm flex items-center gap-1.5 leading-tight">
                                         <i class="fa-solid fa-chart-pie text-skyAccent-500 text-xs"></i>
-                                        Grafana BI Dashboard ติดตามผลรหัสโรค
+                                      พัฒนาระบบรายงานการติดตามข้อมูลผิดพลาด
                                     </h5>
                                     <p class="text-slate-500 text-xs leading-relaxed font-light line-clamp-3">
-                                        จัดทำแดชบอร์ดสรุปสถิติติดตามความสมบูรณ์ในการวินิจฉัยโรคและการลงรหัสหัตถการทางการแพทย์ของแพทย์เวชปฏิบัติ เพื่อวางแผนกำลังคนและประเมินสถิติโรงพยาบาลแบบเรียลไทม์
+                                       สร้างระบบตรวจสอบความถูกต้องของข้อมูลเวชระเบียนแบบ เพื่อให้สามารถแก้ไขข้อมูลให้ครบถ้วนสมบูรณ์ได้ ก่อนการส่งเบิก
                                     </p>
                                 </div>
                                 <div class="pt-4 mt-2 border-t border-brand-100/60 flex justify-between items-center text-[10px]">
-                                    <span class="font-medium text-slate-400">เครื่องมือ: Grafana, MySQL</span>
+                                    <span class="font-medium text-slate-400">เครื่องมือ: SQL Program Data Audit</span>
+                                    <span class="text-skyAccent-600 font-bold flex items-center gap-1 hover:text-skyAccent-700">อ่านต่อ <i class="fa-solid fa-chevron-right text-[7px]"></i></span>
+                                </div>
+                            </div>
+
+                            <!-- Project Card 4 (Data) -->
+                            <div data-category="data" onclick="openProjectModal(5)" class="print-hidden-card portfolio-card bg-white p-6 rounded-2xl border border-brand-200/80 shadow-sm hover:shadow-glow hover:border-skyAccent-400 cursor-pointer transition-all duration-300 transform hover:-translate-y-1 h-full min-h-[220px] flex flex-col justify-between">
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center">
+                                        <span class="bg-skyAccent-50 text-skyAccent-700 font-bold px-2.5 py-1 rounded text-[9px] uppercase border border-skyAccent-100/60 tracking-wider">Dashboard</span>
+                                    </div>
+                                    <h5 class="font-extrabold text-brand-950 text-sm flex items-center gap-1.5 leading-tight">
+                                        <i class="fa-solid fa-chart-pie text-skyAccent-500 text-xs"></i>
+                                        พัฒนา Dashboard ติดตามสรุปเวชระเบียน และการให้รหัสทางการแพย์
+                                    </h5>
+                                    <p class="text-slate-500 text-xs leading-relaxed font-light line-clamp-3">
+                                        สร้าง Dashboard สำหรับติดตามความคืบหน้าการสรุปชาร์ตผู้ป่วย เพื่อสามารถวางแผนจัดการภาระงานได้อย่างเป็นระบบ
+                                    </p>
+                                </div>
+                                <div class="pt-4 mt-2 border-t border-brand-100/60 flex justify-between items-center text-[10px]">
+                                    <span class="font-medium text-slate-400">เครื่องมือ: Grafana Dashboards, SQL</span>
                                     <span class="text-skyAccent-600 font-bold flex items-center gap-1 hover:text-skyAccent-700">อ่านต่อ <i class="fa-solid fa-chevron-right text-[7px]"></i></span>
                                 </div>
                             </div>
@@ -849,36 +869,44 @@
         // Project Detail Database Object for Interactive Portfolio Modal
         const projectDetails = {
             1: {
-                title: "ระบบรายงานประกันสังคมอัตโนมัติ (สปส 2-15 & 2-09)",
+                title: "ระบบรายงานประกันสังคมอัตโนมัติ (สปส 2-15 และ สปส 2-09)",
                 category: "งานไอที & อัตโนมัติ",
-                tech: "MySQL Data Query, Connector Pipe to HIS System",
-                challenge: "ในอดีตการจัดเตรียมเอกสารขอชดเชยค่ารักษากองทุนประกันสังคม (สปส 2-15 และ สปส 2-09) ต้องทำมือด้วยแผ่นกระดาษหรือลงทีละรายประวัติ สะสมจนงานดีเลย์และข้อมูลสะกดผิดสูง",
-                solution: "ศึกษาดึงท่อฐานข้อมูลสารสนเทศโรงพยาบาล (HIS) ค้นรหัสประกันสังคมคนไข้โดยตรง แล้วนำมาเขียนคำสั่ง SQL Query สร้างกระบวนการส่งออกฟอร์มรายงานแบบคำนวณและกรอกข้อมูลคนไข้ให้อัตโนมัติ",
-                impact: "ย่นระยะเวลารอจัดทำเอกสารและขั้นตอนตรวจรายชื่อของเจ้าหน้าที่กองทุนลง 80% ตัดปัญหาความซ้ำซ้อนและปัญหาสะกดชื่อคลาดเคลื่อน ส่งผลให้การตั้งเรื่องเบิกเงินชดเชยรายได้สมบูรณ์รวดเร็วขึ้น"
+                tech: "MySQL, Report Designer",
+                challenge: "ในอดีตการจัดเตรียมเอกสารขอชดเชยค่ารักษากองทุนประกันสังคม (สปส 2-15 และ สปส 2-09) ต้องบันทึกด้วยลายมือลงในแบบฟอร์มทีละราย ทำให้เกิดปัญหาการบันทึกล่าช้า เสี่ยงต่อการบันทึกข้อมูลผิดพลาด",
+                solution: "สร้างกระบวนการส่งออกฟอร์มรายงานแบบคำนวณและกรอกข้อมูลคนไข้ให้อัตโนมัติลงแบบฟอร์ม โดยใช้ความรู้ด้าน Report Designer และ SQL ในการสร้างรายงาน ปรับกระบวนการทำงานให้จัดเก็บเอกสารก่อนผู้ป่วยเข้ารับบริการ",
+                impact: "ลดระยะเวลาจัดทำเอกสารและขั้นตอนการทำงาน ตัดปัญหาความซ้ำซ้อนและปัญหาสะกดชื่อคลาดเคลื่อน ส่งผลให้การตั้งเรื่องเบิกเงินชดเชยรายได้สมบูรณ์รวดเร็วมากยิ่งขึ้น"
             },
             2: {
-                title: "ระบบส่งข้อความเฝ้าระวังคุณภาพสถิติผ่าน Telegram alerts",
+                title: "ระบบส่งข้อมูลแจ้งเตือนผ่าน Line messaging api",
                 category: "งานไอที & อัตโนมัติ",
-                tech: "Telegram API Scripting, MySQL Logic Filters",
-                challenge: "ข้อวินิจฉัยทางการแพทย์ รหัสโรค หรือหัตถการมักถูกกรอกไม่สมบูรณ์ในช่วงปิดรอบเคลม เช่น อายุ-เพศไม่ตรงกับเงื่อนไขรหัสโรค ส่งผลให้พบข้อผิดพลาดช้าและตรวจแก้ไขลำบากภายหลัง",
-                solution: "เขียนสคริปต์สแกนตรวจสอบความผิดปกติทางรหัสเวชสถิติตาม Standard Coding Guideline แล้วส่งสัญญาณแจ้งเตือนการบันทึกข้อมูลไม่ถูกต้องแบบเรียลไทม์ เข้ากลุ่มแชท Telegram บอร์ดเจ้าหน้าที่โดยทันที",
-                impact: "ทำให้ทีมเวชสถิติและทีมประเมินคุณภาพข้อมูลตรวจสอบเห็นเป้าหมาย และแก้ไขความถูกต้องของสถิติคนไข้ร่วมกับแพทย์ผู้รักษาได้ภายใน 24 ชม. ไม่สะสมเคสผิดพลาดไปช่วงปิดงวดสิ้นเดือน"
+                tech: "Line Nodejs",
+                challenge: "การติดตามเวชระเบียน งานเวชสถิติต้องเข้าระบบ HIS เพื่อสืบค้นข้อมูล ว่าเวชระเบียนฉบับนั้น ตอนนี้ สถานะอยู่ที่หน่วยงานใด การสืบค้นข้อมูลใช้เวลานาน เนื่องจากสืบค้นได้ทีละราย",
+                solution: "ใช้ระบบ LINE messaging api ส่งข้อมูลจากระบบ HIS เข้า Line Group",
+                impact: "ทำให้ทีมเวชสถิติลดเวลาการสืบค้นข้อมูล และตรวจสอบติดตามเวชระเบียนได้ง่ายมากยิ่งขึ้น"
             },
             3: {
-                title: "ปรับปรุงกระบวนการจัดเก็บรายได้ของโรงพยาบาลและการแก้ CV Deny",
+                title: "ปรับปรุงกระบวนการจัดเก็บรายได้ของโรงพยาบาล",
                 category: "เรียกเก็บค่ารักษาพยาบาล & บริหารรายได้",
-                tech: "RCM Data Audit Software, AAA Program, Advanced Excel Pivot",
-                challenge: "กองทุน สปสช. หรือประกันสังคมมักปฏิเสธจ่ายชดเชย (CV Deny) กลับมายังบัญชีลูกหนี้โรงพยาบาล อันเกิดจากรหัสโรคคลาดเคลื่อน หรือไม่พบหลักฐานเวชระเบียนที่สมบูรณ์ตามแนวทางการตรวจสอบ",
-                solution: "นำโปรแกรม RCM Data Audit และ AAA เข้ามาใช้คัดกรอง และเปรียบเทียบตารางชดเชยประวัติกับทะเบียนคุมสลิปเงินลูกหนี้ พร้อมประสานจัดตั้งกระบวนการเคลียร์อุทธรณ์อย่างรัดกุม",
-                impact: "สามารถลดอัตราและแก้ไขเคส CV Deny ทวงคืนเงินยอดค้างชดเชยของกองทุนต่าง ๆ กลับมาให้โรงพยาบาลโนนดินแดงได้อย่างมั่นคง และอุดช่องโหว่รายได้ของสถาบัน"
+                tech: "Program AAA",
+                challenge: "กระบวนการในการจัดเก็บรายได้ค่ารักษาพยาบาล จะต้องมีการตั้งลูกหนี้ค่ารักษาพยาบาลเพื่อนำมาเป็นทะเบียนคุมลูกหนี้ค่ารักษาพยาบาล ส่งงานบัญชีเพื่อบันทึกลูกหนี้ เนื่องจากการตั้งลูกหนี้ค่ารักษาพยาบาลมีหลากหลายกองทุน ใช้วิธีการส่งออกข้อมูลจาก HIS เพื่อส่งให้งานบัญชีบันทึกข้อมูล ทำให้เกิดความคลาดเคลื่อน และล่าช้าในการบันทึกบัญชี ใช้เวลา 5 วันกว่าจะบันทึกบัญชีสำเร็จ",
+                solution: "นำโปรแกรม AAA เข้ามาใช้ในการตั้งลูกหนี้ค่ารักษาพยาบาล จัดทำทะเบียนคุมลูกหนี้ พร้อมส่งข้อมูลให้งานบัญชี",
+                impact: "ลดความคลาดเคลื่อนการบันทึกลูกหนี้ค่ารักษาพยาบาลงานประกันสุขภาพ และงานบัญชี ลดเวลาการจัดทำรายงานลูกหนี้ จาก 5 วันทำการ สู่ การบันทึกข้อมูลภายใน 30 นาที"
             },
             4: {
-                title: "พัฒนา Grafana BI Dashboard ติดตามการลงวินิจฉัยและรหัสโรคของแพทย์",
+                title: "พัฒนาระบบรายงานการติดตามข้อมูลผิดพลาด",
+                category: "เรียกเก็บค่ารักษาพยาบาล & บริหารรายได้",
+                tech: "SQL Program Data Audit",
+                challenge: "ความไม่สมบูรณ์และข้อมูลตกหล่นจากการบันทึกผ่านระบบ HIS ของหน่วยงานต่าง ๆ ส่งผลกระทบโดยตรงต่อความถูกต้องของเวชระเบียนและประสิทธิภาพในกระบวนการเรียกเก็บค่ารักษาพยาบาล",
+                solution: "พัฒนาและประยุกต์ใช้โปรแกรม Data Audit ร่วมกับ SQL เพื่อวิเคราะห์และคัดกรองข้อมูลที่ไม่ถูกต้องแบบเชิงรุก พร้อมปรับกระบวนการทำงานให้มีการตรวจสอบความสมบูรณ์ของข้อมูลภายใน 1 วันหลังการให้บริการ เพื่อแจ้งเตือนและแก้ไขข้อมูลให้ครบถ้วนทันท่วงที",
+                impact: "ยกระดับมาตรฐานความถูกต้องของข้อมูล ลดขั้นตอนการแก้ไขงานซ้ำซ้อน และเพิ่มความรวดเร็วในกระบวนการส่งเบิกจ่าย ทำให้โรงพยาบาลได้รับเงินชดเชยค่ารักษาพยาบาลรวดเร็วยิ่งขึ้นและเพิ่มสภาพคล่องทางการเงิน"
+            },
+            5: {
+                title: "พัฒนา Dashboard ติดตามสรุปเวชระเบียน และการให้รหัสทางการแพย์",
                 category: "วิเคราะห์แดชบอร์ด & BI",
-                tech: "Grafana Dashboards, SQL Analytics, Database Connector",
-                challenge: "ฝ่ายบริหารและคณะกรรมการควบคุมคุณภาพเวชระเบียนไม่ทราบสถานะสัดส่วนการลงสรุปโรคของแต่ละแผนกบริการว่าเกิดคอขวดสะสมจำนวนเท่าใดแบบเรียลไทม์เพื่อจัดการประเมินรอบเว้นรอบ",
-                solution: "เชื่อมโยงท่อข้อมูล (Data Pipeline) จากระบบฐานข้อมูลหลักเพื่อป้อนให้แสดงผลกราฟสถิติสำคัญบน Grafana แดชบอร์ด ติดตามสถานะสรุปการวินิจฉัยโรค รหัสโรค รหัสหัตถการ และค่าน้ำหนักสัมพัทธ์รายสัปดาห์",
-                impact: "ยกระดับความโปร่งใสในข้อมูลเวชสถิติ ฝ่ายบริหารสามารถเห็นสัดส่วนงานค้างสะสม และประเมินอัตราความเร็วความถูกต้องในการสรุปโรคของบุคลากรทางการแพทย์แต่ละแผนกได้ในแดชบอร์ดเดียว"
+                tech: "Grafana Dashboards, SQL",
+                challenge:"กระบวนการติดตามสถานะการสรุปเวชระเบียนและรหัสการวินิจฉัยผ่านระบบ HIS มีความล่าช้าและขาดการแสดงผลข้อมูลแบบภาพรวม ทำให้ยากต่อการบริหารจัดการและติดตามงานคงค้างในแต่ละขั้นตอน",
+                solution: "พัฒนา Dashboard อัจฉริยะด้วย Grafana เชื่อมต่อฐานข้อมูลเพื่อแสดงผลสถานะการสรุปเวชระเบียนของแพทย์และการลงรหัสทางการแพทย์แบบเรียลไทม์ พร้อมฟังก์ชันแจ้งเตือนเมื่อพบงานคงค้างสะสม",
+                impact: "ยกระดับประสิทธิภาพการบริหารจัดการเวชระเบียน ลดระยะเวลาการติดตามงาน และเพิ่มความคล่องตัวในกระบวนการเรียกเก็บค่ารักษาพยาบาล ส่งผลให้รายได้ของโรงพยาบาลเป็นไปตามเป้าหมายและรวดเร็วยิ่งขึ้น"
             }
         };
 
