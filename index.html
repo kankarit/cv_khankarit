@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khankarit Nipornram (Note) - Premium Interactive Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Noto Sans Thai & Inter for supreme readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans Thai', 'Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f8fafc',    // Cold white clinical grey background
+                            100: '#f1f5f9',   // Card background accent
+                            200: '#e2e8f0',   // Professional border line
+                            800: '#1e293b',   // Dark text
+                            900: '#0f172a',   // Strong emphasis text
+                            950: '#0b132b',   // Obsidian Deep Navy
+                        },
+                        skyAccent: {
+                            50: '#f0f9ff',    // Soft ice blue for badges
+                            100: '#e0f2fe',   // Light border accent
+                            400: '#38bdf8',   // Bright active status glow
+                            500: '#0ea5e9',   // Vibrant sky element
+                            600: '#0284c7',   // Standard blue
+                            700: '#0369a1',   // Deep sky blue contrast
+                        }
+                    },
+                    boxShadow: {
+                        'premium-soft': '0 10px 30px -10px rgba(11, 19, 43, 0.04), 0 1px 3px rgba(11, 19, 43, 0.02)',
+                        'glow': '0 0 20px 0 rgba(2, 132, 199, 0.12)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @media print {
+            body {
+                background-color: #ffffff !important;
+                color: #0b132b !important;
+                font-size: 11px !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-full-width {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
+            }
+            .print-grid {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 0.5rem !important;
+            }
+            /* Expand all tab contents on print output */
+            .print-flat-tab-content {
+                display: block !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                border-bottom: 1px dashed #e2e8f0 !important;
+                padding-bottom: 1.5rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+            .print-hidden-card {
+                display: block !important;
+                opacity: 1 !important;
+                transform: none !important;
+                box-shadow: none !important;
+                border: 1px solid #e2e8f0 !important;
+            }
+            .progress-bar {
+                border: 1px solid #cbd5e1 !important;
+                background-color: #f1f5f9 !important;
+            }
+            .progress-fill {
+                background-color: #0b132b !important;
+            }
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 5px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 99px;
+        }
+    </style>
+</head>
+<body class="bg-brand-50 text-brand-900 font-sans min-h-screen flex flex-col antialiased leading-relaxed transition-colors duration-300">
+
+    <!-- <header class="no-print bg-brand-950 text-white py-4 px-4 md:px-6 sticky top-0 z-40 border-b border-white/10 shadow-md">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-3 text-center sm:text-left">
+                <div class="bg-gradient-to-tr from-skyAccent-700 to-skyAccent-500 text-white font-bold p-2.5 rounded-xl text-xs shadow-glow">
+                    <i class="fa-solid fa-id-card-clip mr-1.5"></i> PORTFOLIO APP
+                </div>
+                <div>
+                    <h1 class="font-bold text-sm tracking-wide">KHANKARIT NIPORNRAM</h1>
+                    <p class="text-[10px] text-skyAccent-400 font-semibold tracking-wider uppercase">Health Academic & Medical Statistics Specialist</p>
+                </div>
+            </div>
+             -->
+            <!-- <div class="flex items-center space-x-3 text-xs w-full sm:w-auto justify-center sm:justify-end"> -->
+                <!-- Live Edit mode switch -->
+                <!-- <button id="toggleEditBtn" onclick="toggleEditMode()" class="bg-white/5 hover:bg-white/10 text-skyAccent-400 font-semibold py-2 px-3.5 rounded-xl transition-all border border-skyAccent-500/20 flex items-center gap-2 backdrop-blur-sm">
+                    <i id="editIcon" class="fa-regular fa-pen-to-square"></i> <span id="editText" class="hidden xs:inline">เปิดโหมดแก้ไขประวัติ</span><span class="xs:hidden">แก้ไข</span>
+                </button> -->
+                
+                <!-- Print Trigger for pdf mpdf (1).pdf and khankarit Resume (3).pdf format matching -->
+                <!-- <button onclick="window.print()" class="bg-skyAccent-600 hover:bg-skyAccent-700 text-white font-semibold py-2 px-3.5 rounded-xl transition-all shadow-md flex items-center gap-2">
+                    <i class="fa-solid fa-print"></i> พิมพ์ / PDF
+                </button>
+            </div>
+        </div>
+    </header> -->
+
+    <!-- <div id="toastMessage" class="no-print bg-skyAccent-50 border border-skyAccent-100 text-brand-800 p-4 m-4 rounded-2xl max-w-7xl mx-auto shadow-sm flex items-start justify-between">
+        <div class="flex items-start space-x-3.5">
+            <div class="bg-skyAccent-600 text-white rounded-xl p-2 flex items-center justify-center shadow-sm mt-0.5 flex-shrink-0">
+                <i class="fa-solid fa-circle-info text-xs"></i>
+            </div>
+            <p class="text-xs font-medium leading-relaxed">
+                <strong>💡 คำแนะนำระบบโต้ตอบ:</strong> Resume นี้ถูกปรับปรุงส่วนข้อมูลด้านซ้ายให้เป็นระบบ **Vertical Tabs** ตามแบบตัวอย่างในไฟล์ <strong>image_7635a1.jpg</strong> และปรับโฉมส่วนประวัติย่อด้านบนตามสไตล์ <strong>Elegant Header Block</strong> ในไฟล์ <strong>Screenshot 2026-06-12 230455.png</strong> ทั้งหมดรองรับอุปกรณ์มือถือและแท็บเล็ต 100% พร้อมโหมดพิมพ์ PDF ทันที!
+            </p>
+        </div>
+        <button onclick="this.parentElement.remove()" class="text-slate-400 hover:text-slate-900 text-sm font-bold pl-3 transition">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div> -->
+
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 md:p-6 lg:p-8 print-full-width">
+        <div class="space-y-6 md:space-y-8 print-full-width">
+            
+            <!-- ELEGANT HEADER BLOCK START -->
+            <div class="bg-white rounded-3xl p-6 md:p-10 border border-brand-200/60 shadow-premium-soft transition-all duration-300 print-full-width relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-skyAccent-500/5 rounded-full blur-3xl -z-10"></div>
+                
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 print-full-width">
+                    <!-- Circular avatar with custom glow border -->
+                    <div class="relative group flex-shrink-0">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-skyAccent-100 shadow-glow relative bg-slate-100 flex items-center justify-center">
+                            <img id="profilePreview" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105" 
+                                 src="https://placehold.co/400x400/f8fafc/0f172a?text=Khankarit" 
+                                 alt="Khankarit Nipornram Profile"
+                                 onerror="this.src='https://placehold.co/400x400/0ea5e9/ffffff?text=KN'">
+                            
+                            <!-- Hidden File Input for photo customization -->
+                            <div class="no-print absolute inset-0 bg-brand-950/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center text-center p-2 cursor-pointer" onclick="document.getElementById('profileImageInput').click()">
+                                <i class="fa-solid fa-camera text-xl mb-1 text-skyAccent-400"></i>
+                                <span class="text-[9px] font-semibold text-white tracking-wider uppercase">อัปโหลดรูป</span>
+                            </div>
+                        </div>
+                        <input type="file" id="profileImageInput" accept="image/*" class="hidden" onchange="previewImage(event)">
+                    </div>
+
+                    <!-- Executive Info & Narrative Details -->
+                    <div class="flex-grow text-center md:text-left space-y-4 w-full">
+                        <div>
+                            <!-- Headline Name in Bold Navy -->
+                            <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-brand-950" contenteditable="false" id="field-fullname-th">
+                                นายขรรคฤทธิ์ นิพรรัมย์ <span class="text-skyAccent-600 font-medium text-xl md:text-2xl">(โน้ต)</span>
+                            </h2>
+                            <!-- English name subtitle -->
+                            <h3 class="text-sm md:text-base font-semibold text-slate-500 tracking-wide mt-0.5" contenteditable="false" id="field-fullname-en">
+                                Khankarit Nipornram
+                            </h3>
+                        </div>
+
+                        <!-- Pill Badges as seen in the reference screenshot -->
+                        <div class="flex flex-wrap justify-center md:justify-start gap-1.5 md:gap-2">
+                            <span class="bg-skyAccent-50 text-skyAccent-700 text-[11px] font-bold px-3.5 py-1.5 rounded-full border border-skyAccent-100 tracking-wide">
+                                <i class="fa-solid fa-briefcase text-[10px] mr-1"></i> นักวิชาการสาธารณสุข (เวชสถิติ)
+                            </span>
+                            <!-- <span class="bg-brand-50 text-brand-800 text-[11px] font-bold px-3.5 py-1.5 rounded-full border border-brand-200 tracking-wide">
+                                <i class="fa-solid fa-database text-[10px] mr-1"></i> Medical Statistician
+                            </span>
+                            <span class="bg-slate-100 text-slate-700 text-[11px] font-bold px-3.5 py-1.5 rounded-full border border-slate-200 tracking-wide">
+                                <i class="fa-solid fa-code text-[10px] mr-1"></i> SQL Database Specialist
+                            </span> -->
+                        </div>
+
+                        <div class="space-y-2 pt-1">
+                            <!-- Section Title -->
+                            <h4 class="text-xs font-bold text-brand-950 uppercase tracking-widest flex items-center justify-center md:justify-start gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-skyAccent-600"></span> แนะนำตัว
+                            </h4>
+                            <!-- Narrative statement based on "mpdf (1).pdf" -->
+                            <p class="text-xs md:text-sm text-slate-600 leading-relaxed max-w-4xl font-light" contenteditable="false" id="field-summary">
+                                นักเวชสถิติที่มีความเชี่ยวชาญในการให้รหัสทางการแพทย์ (ICD-10 WHO & ICD-9-CM) และวิเคราะห์ข้อมูลเวชระเบียน ด้วยประสบการณ์การทำงานจริงในการออกแบบและดำเนินการศึกษาทางสถิติของโรงพยาบาล รวมถึงการประยุกต์ใช้คำสั่ง SQL เพื่อดึงข้อมูล วิเคราะห์ ตรวจจับความคลาดเคลื่อน และแก้ไขยอดการปฏิเสธชดเชยค่ารักษาพยาบาล (CV Deny) ร่วมกับการพัฒนาแดชบอร์ดติดตามด้วยระบบ Grafana และบอทระบบแจ้งเตือนเพื่อเพิ่มเสถียรภาพรายได้และคุณภาพฐานข้อมูลของหน่วยงาน
+                            </p>
+                        </div>
+                        
+                        <!-- Premium Action decoration with small border
+                        <div class="flex justify-center md:justify-start items-center gap-3 pt-1 text-xs">
+                            <span class="w-8 h-0.5 bg-skyAccent-600"></span>
+                            <span class="text-slate-400 font-medium">พร้อมเริ่มงานได้ทันที (ยินดีทำงานใน กทม., ต่างจังหวัด และต่างประเทศ)</span>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- ELEGANT HEADER BLOCK END -->
+
+            <!-- TWO COLUMNS GRID LAYOUT -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start print-grid">
+                
+                <!-- LEFT COLUMN: VERTICAL TABS & GENERAL INFOS (Span 5 on Large, 1 on Mobile) -->
+                <div class="lg:col-span-5 bg-white p-5 md:p-6 rounded-3xl border border-brand-200/60 shadow-premium-soft flex flex-col gap-6 print-flat-tab-content">
+                    
+                    <!-- Vertical Tab Bar Area - Adapts to Mobile Scrollable list -->
+                    <!-- TAB CONTAINER -->
+                    <div class="no-print">
+                        <h3 class="text-xs font-bold text-brand-950 uppercase tracking-wider mb-3.5 pb-2 border-b border-brand-100 flex items-center justify-between">
+                            <span><i class="fa-solid fa-list-ul mr-2 text-skyAccent-600"></i>เมนูรายละเอียดส่วนตัว</span>
+                            <span class="text-[9px] text-slate-400 lowercase font-normal">แตะสลับข้อมูลเพื่อเปิดดู</span>
+                        </h3>
+                        
+                        <!-- Responsive Tab Controls: Vertical layout on desktop, horizontal scroll on mobile/tablet -->
+                        <div class="flex flex-row lg:flex-col gap-1.5 overflow-x-auto lg:overflow-x-visible pb-2.5 lg:pb-0 custom-scrollbar whitespace-nowrap">
+                            
+                            <!-- Tab Button 1 -->
+                            <button onclick="switchInfoTab('contact')" id="btn-tab-contact" class="info-tab-button flex items-center justify-between gap-3 px-4 py-3 rounded-xl font-bold text-xs border transition-all duration-200 bg-skyAccent-50 border-skyAccent-100 text-skyAccent-700 shadow-sm">
+                                <span class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-address-book text-sm w-4 text-center"></i>
+                                    ข้อมูลการติดต่อ
+                                </span>
+                                <i class="fa-solid fa-chevron-right text-[10px] hidden lg:inline opacity-80"></i>
+                            </button>
+                            
+                            <!-- Tab Button 2 -->
+                            <button onclick="switchInfoTab('profile')" id="btn-tab-profile" class="info-tab-button flex items-center justify-between gap-3 px-4 py-3 rounded-xl font-bold text-xs border transition-all duration-200 bg-transparent border-transparent text-slate-600 hover:bg-slate-50 hover:text-brand-950">
+                                <span class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-user-circle text-sm w-4 text-center"></i>
+                                    ข้อมูลส่วนตัวพื้นฐาน
+                                </span>
+                                <i class="fa-solid fa-chevron-right text-[10px] hidden lg:inline opacity-80"></i>
+                            </button>
+
+                            <!-- Tab Button 3 -->
+                            <button onclick="switchInfoTab('education')" id="btn-tab-education" class="info-tab-button flex items-center justify-between gap-3 px-4 py-3 rounded-xl font-bold text-xs border transition-all duration-200 bg-transparent border-transparent text-slate-600 hover:bg-slate-50 hover:text-brand-950">
+                                <span class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-graduation-cap text-sm w-4 text-center"></i>
+                                    ประวัติการศึกษา
+                                </span>
+                                <i class="fa-solid fa-chevron-right text-[10px] hidden lg:inline opacity-80"></i>
+                            </button>
+
+                            <!-- Tab Button 4 -->
+                            <button onclick="switchInfoTab('skills')" id="btn-tab-skills" class="info-tab-button flex items-center justify-between gap-3 px-4 py-3 rounded-xl font-bold text-xs border transition-all duration-200 bg-transparent border-transparent text-slate-600 hover:bg-slate-50 hover:text-brand-950">
+                                <span class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-screwdriver-wrench text-sm w-4 text-center"></i>
+                                    ทักษะและความสามารถ
+                                </span>
+                                <i class="fa-solid fa-chevron-right text-[10px] hidden lg:inline opacity-80"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- VIEW PANEL FOR TABS -->
+                    <div class="flex-grow w-full">
+                        
+                        <!-- TAB CONTENT 1: CONTACT INFO -->
+                        <div id="content-tab-contact" class="info-tab-content print-flat-tab-content space-y-4">
+                            <h4 class="text-xs font-bold text-brand-950 tracking-widest uppercase border-b border-brand-200 pb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-address-book text-skyAccent-600"></i>ข้อมูลการติดต่อ (Contact Details)
+                            </h4>
+                            
+                            <div class="space-y-3.5 text-xs">
+                                <!-- Phone Line -->
+                                <div class="flex items-center justify-between group bg-slate-50/50 p-2.5 rounded-xl border border-brand-100 hover:border-skyAccent-100 transition">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-slate-700 border border-brand-200/50 shadow-sm">
+                                            <i class="fa-solid fa-phone text-xs"></i>
+                                        </div>
+                                        <div>
+                                            <span class="block text-[8px] text-slate-400 font-bold uppercase tracking-wider">เบอร์โทรศัพท์</span>
+                                            <span class="font-bold text-slate-800" contenteditable="false" id="contact-phone">0961853933</span>
+                                        </div>
+                                    </div>
+                                    <button onclick="copyToClipboard('0961853933')" class="no-print opacity-0 group-hover:opacity-100 text-skyAccent-600 hover:text-brand-950 transition p-1">
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Primary Email -->
+                                <!-- <div class="flex items-center justify-between group bg-slate-50/50 p-2.5 rounded-xl border border-brand-100 hover:border-skyAccent-100 transition">
+                                    <div class="flex items-center space-x-3 overflow-hidden">
+                                        <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-slate-700 border border-brand-200/50 shadow-sm flex-shrink-0">
+                                            <i class="fa-solid fa-envelope text-xs"></i>
+                                        </div>
+                                        <div class="overflow-hidden">
+                                            <span class="block text-[8px] text-slate-400 font-bold uppercase tracking-wider">อีเมลหลัก</span>
+                                            <span class="font-bold text-slate-800 truncate block" contenteditable="false" id="contact-email">note.285.ksp@gmail.com</span>
+                                        </div>
+                                    </div>
+                                    <button onclick="copyToClipboard('note.285.ksp@gmail.com')" class="no-print opacity-0 group-hover:opacity-100 text-skyAccent-600 hover:text-brand-950 transition p-1 flex-shrink-0">
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div> -->
+
+                                <!-- Alt Email -->
+                                <div class="flex items-center justify-between group bg-slate-50/50 p-2.5 rounded-xl border border-brand-100 hover:border-skyAccent-100 transition">
+                                    <div class="flex items-center space-x-3 overflow-hidden">
+                                        <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-slate-700 border border-brand-200/50 shadow-sm flex-shrink-0">
+                                            <i class="fa-solid fa-envelope-open text-xs"></i>
+                                        </div>
+                                        <div class="overflow-hidden">
+                                            <span class="block text-[8px] text-slate-400 font-bold uppercase tracking-wider">อีเมล</span>
+                                            <span class="font-bold text-slate-800 truncate block" contenteditable="false" id="contact-email-alt">Khankarit.note@gmail.com</span>
+                                        </div>
+                                    </div>
+                                    <button onclick="copyToClipboard('Khankarit.note@gmail.com')" class="no-print opacity-0 group-hover:opacity-100 text-skyAccent-600 hover:text-brand-950 transition p-1 flex-shrink-0">
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Line Chat -->
+                                <div class="flex items-center justify-between group bg-slate-50/50 p-2.5 rounded-xl border border-brand-100 hover:border-skyAccent-100 transition">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-emerald-600 border border-brand-200/50 shadow-sm">
+                                            <i class="fa-brands fa-line text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <span class="block text-[8px] text-slate-400 font-bold uppercase tracking-wider">LINE ID</span>
+                                            <span class="font-bold text-slate-800" contenteditable="false" id="contact-line">nipornram.nn</span>
+                                        </div>
+                                    </div>
+                                    <button onclick="copyToClipboard('nipornram.nn')" class="no-print opacity-0 group-hover:opacity-100 text-skyAccent-600 hover:text-brand-950 transition p-1">
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Address Location -->
+                                <div class="flex items-start space-x-3 bg-slate-50/50 p-3 rounded-xl border border-brand-100">
+                                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-slate-700 border border-brand-200/50 shadow-sm flex-shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-location-dot text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[8px] text-slate-400 font-bold uppercase tracking-wider">ที่อยู่ตามทะเบียนบ้าน</span>
+                                        <span class="text-slate-700 font-medium leading-relaxed block" contenteditable="false" id="contact-address">
+                                            22 หมู่ 8 เมืองไผ่ กระสัง บุรีรัมย์ 31160 ประเทศไทย
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB CONTENT 2: PERSONAL PROFILE DETAILS -->
+                        <div id="content-tab-profile" class="info-tab-content print-flat-tab-content space-y-4 hidden">
+                            <h4 class="text-xs font-bold text-brand-950 tracking-widest uppercase border-b border-brand-200 pb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-user-circle text-skyAccent-600"></i>ข้อมูลส่วนตัวพื้นฐาน (Personal Data)
+                            </h4>
+                            
+                            <div class="space-y-3.5 text-xs">
+                                <div class="grid grid-cols-2 gap-3 bg-slate-50/50 p-4 rounded-xl border border-brand-100">
+                                    <div>
+                                        <span class="block text-[8px] text-slate-400 font-semibold uppercase tracking-wider">วันเกิด</span>
+                                        <span class="font-bold text-brand-950 block mt-0.5" contenteditable="false" id="p-dob">22 พฤษภาคม 2543</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[8px] text-slate-400 font-semibold uppercase tracking-wider">อายุ</span>
+                                        <span class="font-bold text-brand-950 block mt-0.5" contenteditable="false" id="p-age">26 ปี (ณ ปี 2026)</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[8px] text-slate-400 font-semibold uppercase tracking-wider">สัญชาติ / ศาสนา</span>
+                                        <span class="font-bold text-brand-950 block mt-0.5" contenteditable="false" id="p-nation">ไทย / พุทธ</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[8px] text-slate-400 font-semibold uppercase tracking-wider">สถานภาพ</span>
+                                        <span class="font-bold text-brand-950 block mt-0.5" contenteditable="false" id="p-marry">โสด</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[8px] text-slate-400 font-semibold uppercase tracking-wider">น้ำหนัก / ส่วนสูง</span>
+                                        <span class="font-bold text-brand-950 block mt-0.5" contenteditable="false" id="p-weight">60 กก. / 178 ซม.</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[8px] text-slate-400 font-semibold uppercase tracking-wider">สถานภาพทหาร</span>
+                                        <span class="font-bold text-emerald-600 flex items-center gap-1 mt-0.5" contenteditable="false" id="p-military">
+                                            <i class="fa-solid fa-shield-halved text-[10px]"></i> ผ่านการเกณฑ์ทหารแล้ว
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-slate-50/50 p-3.5 rounded-xl border border-brand-100 space-y-2">
+                                    <span class="block text-[8px] text-slate-400 font-bold uppercase tracking-wider">ใบขับขี่และพาหนะ</span>
+                                    <div class="flex flex-wrap gap-1.5">
+                                        <span class="bg-white text-slate-700 text-[10px] font-semibold px-2.5 py-1 rounded-lg border border-brand-200 flex items-center gap-1.5 shadow-xs">
+                                            <i class="fa-solid fa-car text-xs text-skyAccent-600"></i> รถยนต์
+                                        </span>
+                                        <span class="bg-white text-slate-700 text-[10px] font-semibold px-2.5 py-1 rounded-lg border border-brand-200 flex items-center gap-1.5 shadow-xs">
+                                            <i class="fa-solid fa-motorcycle text-xs text-skyAccent-600"></i> จักรยานยนต์
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-slate-50/50 p-3.5 rounded-xl border border-brand-100 space-y-2">
+                                    <span class="block text-[8px] text-slate-400 font-bold uppercase tracking-wider">คุณสมบัติการทำงาน</span>
+                                    <div class="space-y-1.5 text-slate-600 text-[11px]">
+                                        <div class="flex items-center gap-2">
+                                            <i class="fa-solid fa-map-location-dot text-skyAccent-600 text-xs w-4 text-center"></i>
+                                            <span>กรุงเทพมหานคร (ทุกเขต) หรือ ต่างจังหวัด</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fa-solid fa-plane text-skyAccent-600 text-xs w-4 text-center"></i>
+                                            <span>ยินดีและพร้อมเดินทางไปทำงานต่างประเทศ</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fa-solid fa-clock text-skyAccent-600 text-xs w-4 text-center"></i>
+                                            <span>พร้อมเริ่มทำงานได้ทันทีภายใน 30 วัน</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fa-solid fa-coins text-emerald-600 text-xs w-4 text-center"></i>
+                                            <span>ความต้องการเงินเดือน: 19,000 - 20,000 บาท</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB CONTENT 3: EDUCATION DETAILS -->
+                        <div id="content-tab-education" class="info-tab-content print-flat-tab-content space-y-4 hidden">
+                            <h4 class="text-xs font-bold text-brand-950 tracking-widest uppercase border-b border-brand-200 pb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-graduation-cap text-skyAccent-600"></i>ประวัติการศึกษา (Education)
+                            </h4>
+                            
+                            <div class="bg-slate-50/50 p-4 rounded-xl border border-brand-100 space-y-3">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center text-slate-800 text-sm border border-brand-200 shadow-sm flex-shrink-0">
+                                        <i class="fa-solid fa-building-columns"></i>
+                                    </div>
+                                    <div class="flex-grow space-y-1.5 text-xs">
+                                        <h5 class="font-bold text-brand-950 leading-tight" contenteditable="false" id="edu-inst">
+                                            วิทยาลัยเทคโนโลยีทางการแพทย์ และสาธารณสุข กาญจนาภิเษก
+                                        </h5>
+                                        <p class="text-slate-500 font-medium text-[11px]" contenteditable="false" id="edu-degree">
+                                            วิทยาศาสตรบัณฑิต (วท.บ.) สาขาวิชาเวชระเบียน
+                                        </p>
+                                        <div class="flex flex-col gap-1 pt-1">
+                                            <span class="bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2.5 py-1 rounded border border-emerald-200/50 w-fit">
+                                                🎖️ เกียรตินิยมอันดับ 2
+                                            </span>
+                                            <span class="bg-skyAccent-50 text-skyAccent-700 text-[10px] font-bold px-2.5 py-1 rounded border border-skyAccent-100 w-fit mt-1">
+                                                📈 เกรดเฉลี่ยสะสม (GPAX): 3.57
+                                            </span>
+                                        </div>
+                                        <span class="inline-block text-[10px] text-slate-400 font-medium pt-1">สำเร็จการศึกษาเมื่อ: 17 มีนาคม 2566</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB CONTENT 4: SKILLS DETAILS -->
+                        <div id="content-tab-skills" class="info-tab-content print-flat-tab-content space-y-4 hidden">
+                            <h4 class="text-xs font-bold text-brand-950 tracking-widest uppercase border-b border-brand-200 pb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-screwdriver-wrench text-skyAccent-600"></i>ทักษะและความสามารถ (Skills Profile)
+                            </h4>
+                            
+                            <div class="space-y-4 text-xs">
+                                <!-- Hard Skills Bar Indicators -->
+                                <div class="space-y-3">
+                                    <!-- MySQL / SQL -->
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between items-center font-bold text-[11px]">
+                                            <span class="text-slate-800">MySQL / SQL Database Command</span>
+                                            <span class="text-skyAccent-600">ชำนาญ (Expert)</span>
+                                        </div>
+                                        <div class="w-full bg-slate-200/50 rounded-full h-1.5 progress-bar">
+                                            <div class="bg-brand-950 h-1.5 rounded-full progress-fill" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ICD Coding -->
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between items-center font-bold text-[11px]">
+                                            <span class="text-slate-800">Medical Coding (ICD-10, ICD-9-CM)</span>
+                                            <span class="text-skyAccent-600">ชำนาญ (Expert)</span>
+                                        </div>
+                                        <div class="w-full bg-slate-200/50 rounded-full h-1.5 progress-bar">
+                                            <div class="bg-brand-950 h-1.5 rounded-full progress-fill" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Excel Advanced -->
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between items-center font-bold text-[11px]">
+                                            <span class="text-slate-800">MS Excel (Pivot Tables, Analytical formulas)</span>
+                                            <span class="text-skyAccent-600">เชี่ยวชาญ (Experienced)</span>
+                                        </div>
+                                        <div class="w-full bg-slate-200/50 rounded-full h-1.5 progress-bar">
+                                            <div class="bg-brand-950 h-1.5 rounded-full progress-fill" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Business Intelligence -->
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between items-center font-bold text-[11px]">
+                                            <span class="text-slate-800">Grafana Dashboard Analytics</span>
+                                            <span class="text-skyAccent-600">เชี่ยวชาญ (Experienced)</span>
+                                        </div>
+                                        <div class="w-full bg-slate-200/50 rounded-full h-1.5 progress-bar">
+                                            <div class="bg-brand-950 h-1.5 rounded-full progress-fill" style="width: 80%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="border-slate-100">
+
+                                <!-- Soft Skills Section -->
+                                <div class="space-y-2">
+                                    <span class="block text-[9px] text-slate-400 font-bold uppercase tracking-wider">ทักษะส่วนบุคคล (Soft Skills)</span>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <div class="bg-slate-50 p-2.5 rounded-xl border border-brand-100 text-center">
+                                            <i class="fa-solid fa-head-side-virus text-skyAccent-600 mb-1 text-sm"></i>
+                                            <span class="font-bold text-slate-800 block text-[10px]">การคิดวิเคราะห์ประเมิน</span>
+                                        </div>
+                                        <div class="bg-slate-50 p-2.5 rounded-xl border border-brand-100 text-center">
+                                            <i class="fa-solid fa-clock-rotate-left text-skyAccent-600 mb-1 text-sm"></i>
+                                            <span class="font-bold text-slate-800 block text-[10px]">ทำงานภายใต้แรงกดดัน</span>
+                                        </div>
+                                        <div class="bg-slate-50 p-2.5 rounded-xl border border-brand-100 text-center">
+                                            <i class="fa-solid fa-people-group text-skyAccent-600 mb-1 text-sm"></i>
+                                            <span class="font-bold text-slate-800 block text-[10px]">การประสานงานร่วมกัน</span>
+                                        </div>
+                                        <div class="bg-slate-50 p-2.5 rounded-xl border border-brand-100 text-center">
+                                            <i class="fa-solid fa-seedling text-skyAccent-600 mb-1 text-sm"></i>
+                                            <span class="font-bold text-slate-800 block text-[10px]">เรียนรู้เทคโนโลยีใหม่เสมอ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: WORK TIMELINE & GROUPED PORTFOLIO CARDS (Span 7) -->
+                <div class="lg:col-span-7 space-y-6 md:space-y-8">
+                    
+                    <!-- WORK EXPERIENCE TIMELINE SECTION -->
+                    <!-- TIMELINE START -->
+                    <div class="bg-white p-5 md:p-6 rounded-3xl border border-brand-200/60 shadow-premium-soft space-y-6">
+                        <h4 class="text-xs font-bold text-brand-950 tracking-widest uppercase border-b border-brand-200 pb-2.5 flex items-center gap-2">
+                            <i class="fa-solid fa-briefcase text-skyAccent-600"></i>ประวัติและประสบการณ์การทำงาน (Work History)
+                        </h4>
+
+                        <!-- Vertical Timeline -->
+                        <div class="relative pl-5 border-l border-slate-200 space-y-6">
+                            
+                            <!-- Job 1: Non Din Daeng Hospital -->
+                            <div class="relative">
+                                <!-- Marker -->
+                                <div class="absolute -left-[26.5px] top-1 w-3 h-3 rounded-full bg-skyAccent-500 border-2 border-white shadow-glow"></div>
+                                
+                                <div class="space-y-2">
+                                    <div class="flex flex-col sm:flex-row justify-between items-start gap-1">
+                                        <div>
+                                            <h5 class="text-sm font-extrabold text-brand-950" contenteditable="false" id="work1-title">
+                                                โรงพยาบาลโนนดินแดง
+                                            </h5>
+                                            <p class="text-[11px] font-bold text-skyAccent-600 mt-0.5">
+                                                ตำแหน่ง: นักเวชสถิติ <span class="text-slate-300">|</span> <span class="text-slate-500 font-medium">ธุรกิจ: กิจกรรมโรงพยาบาล</span>
+                                            </p>
+                                        </div>
+                                        <div class="sm:text-right mt-1 sm:mt-0 flex-shrink-0">
+                                            <span class="bg-brand-950 text-white text-[9px] font-bold px-2.5 py-1 rounded-full whitespace-nowrap">
+                                                เมษายน 2566 - ปัจจุบัน (3 ปี 2 เดือน)
+                                            </span>
+                                            <p class="text-[9px] text-slate-400 mt-0.5" contenteditable="false" id="work1-salary">เงินเดือน: 18,000 บาท</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Job duties inside clean slate card -->
+                                    <div class="bg-slate-50/70 p-3.5 rounded-xl border border-brand-100/50 text-[11px] text-slate-700 space-y-2">
+                                        <p class="font-bold text-brand-950 border-b border-brand-100 pb-1 flex items-center gap-1.5">
+                                            <i class="fa-solid fa-clipboard-list text-skyAccent-500"></i> ขอบข่ายหน้าที่และความรับผิดชอบหลัก:
+                                        </p>
+                                        <ul class="space-y-1.5 pl-0.5 list-none">
+                                            <li class="flex items-start gap-1.5">
+                                                <i class="fa-solid fa-circle-chevron-right text-skyAccent-600 text-[10px] mt-1 flex-shrink-0"></i>
+                                                <span><strong>งานเวชระเบียน:</strong> บริหารจัดการเวชระเบียน คุมข้อมูลประวัติผู้ป่วยนอก (OPD) และผู้ป่วยใน (IPD)</span>
+                                            </li>
+                                            <li class="flex items-start gap-1.5">
+                                                <i class="fa-solid fa-circle-chevron-right text-skyAccent-600 text-[10px] mt-1 flex-shrink-0"></i>
+                                                <span><strong>รหัสวินิจฉัยโรค:</strong> สรุปให้รหัสทางการแพทย์ตามระบบ <strong>ICD-10 WHO</strong> และ <strong>ICD-9-CM</strong> ของผู้ป่วยนอกและใน</span>
+                                            </li>
+                                            <li class="flex items-start gap-1.5">
+                                                <i class="fa-solid fa-circle-chevron-right text-skyAccent-600 text-[10px] mt-1 flex-shrink-0"></i>
+                                                <span><strong>ควบคุมคุณภาพรหัสโรค:</strong> ตรวจประเมินความสอดคล้องของการให้รหัสกับเอกสารบันทึกเพื่อตรวจสอบคุณภาพข้อมูล</span>
+                                            </li>
+                                            <li class="flex items-start gap-1.5">
+                                                <i class="fa-solid fa-circle-chevron-right text-skyAccent-600 text-[10px] mt-1 flex-shrink-0"></i>
+                                                <span><strong>ตรวจสอบกองทุนหลัก:</strong> ดูแลการเรียกเก็บค่ารักษาพยาบาลกองทุนประกันสังคม ข้าราชการ และสิทธิหลักประกันสุขภาพ (บัตรทอง)</span>
+                                            </li>
+                                            <li class="flex items-start gap-1.5">
+                                                <i class="fa-solid fa-circle-chevron-right text-skyAccent-600 text-[10px] mt-1 flex-shrink-0"></i>
+                                                <span><strong>แก้ไขการปฏิเสธชดเชย:</strong> ตรวจสอบ เรียกคืน และแก้ไขข้อปฏิเสธชดเชยค่ารักษา <strong>(CV Deny)</strong> เปรียบเทียบกับยอดบัญชีลูกหนี้</span>
+                                            </li>
+                                            <li class="flex items-start gap-1.5">
+                                                <i class="fa-solid fa-circle-chevron-right text-skyAccent-600 text-[10px] mt-1 flex-shrink-0"></i>
+                                                <span><strong>SQL Query:</strong> เขียนสืบค้นข้อมูลเชิงลึกผ่านคำสั่ง SQL ดึงรายงานตรวจสอบสถานะสารสนเทศโรงพยาบาล</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Job 2: Maharaj Nakornratchasima Hospital -->
+                            <div class="relative">
+                                <!-- Marker -->
+                                <div class="absolute -left-[26.5px] top-1 w-3 h-3 rounded-full bg-slate-300 border-2 border-white shadow-sm"></div>
+                                
+                                <div class="space-y-2">
+                                    <div class="flex flex-col sm:flex-row justify-between items-start gap-1">
+                                        <div>
+                                            <h5 class="text-sm font-extrabold text-brand-950" contenteditable="false" id="work2-title">
+                                                โรงพยาบาลมหาราชนครราชสีมา (Part-Time)
+                                            </h5>
+                                            <p class="text-[11px] font-bold text-skyAccent-600 mt-0.5">
+                                                ตำแหน่ง: นักเวชสถิติ (Part Time) <span class="text-slate-300">|</span> <span class="text-slate-500 font-medium">ธุรกิจ: โรงพยาบาลศูนย์ตติยภูมิ</span>
+                                            </p>
+                                        </div>
+                                        <div class="sm:text-right mt-1 sm:mt-0 flex-shrink-0">
+                                            <span class="bg-slate-100 text-slate-700 text-[9px] font-bold px-2.5 py-1 rounded-full whitespace-nowrap">
+                                                มีนาคม 2565 - มีนาคม 2565 (1 เดือน)
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-slate-50/70 p-3.5 rounded-xl border border-brand-100/50 text-[11px] text-slate-700 space-y-1.5">
+                                        <p class="font-bold text-brand-950 border-b border-brand-100 pb-1 flex items-center gap-1.5">
+                                            <i class="fa-solid fa-clipboard-list text-slate-400"></i> รายละเอียดการปฏิบัติงาน:
+                                        </p>
+                                        <div class="flex items-start gap-1.5">
+                                            <i class="fa-solid fa-circle-chevron-right text-skyAccent-600 text-[10px] mt-1 flex-shrink-0"></i>
+                                            <span>รับผิดชอบในการให้รหัสทางการแพทย์ (ICD-10 WHO, ICD-9-CM) สำหรับประวัติคนไข้ประเภทผู้ป่วยนอก (OPD) ณ โรงพยาบาลระดับศูนย์ขนาดใหญ่</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- TIMELINE END -->
+
+                    <!-- GROUPED PORTFOLIO CARDS SECTION -->
+                    <!-- PORTFOLIO CARDS CONTAINER -->
+                    <div class="bg-white p-6 md:p-8 rounded-3xl border border-brand-200/60 shadow-premium-soft space-y-6">
+                        <div class="border-b border-brand-200 pb-4 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3">
+                            <div>
+                                <h4 class="text-sm font-extrabold text-brand-950 tracking-wide uppercase flex items-center gap-2">
+                                    <i class="fa-solid fa-folder-open text-skyAccent-600"></i>กลุ่มผลงานและความสำเร็จ
+                                </h4>
+                                <p class="text-[11px] text-slate-400 font-normal mt-1">แบ่งสัดส่วนกริดและจำกัดขนาดความยาว เพื่อความสวยงามไม่ซ้อนทับกัน</p>
+                            </div>
+                            <span class="no-print text-[10px] font-semibold text-skyAccent-600 animate-pulse flex items-center gap-1">
+                                <i class="fa-solid fa-circle-dot"></i> กดการ์ดเพื่อดูข้อมูลเชิงลึก
+                            </span>
+                        </div>
+
+                        <!-- Tab Filters for Portfolio Selection -->
+                        <div class="no-print flex flex-wrap gap-1.5 text-xs">
+                            <button onclick="filterPortfolio('all')" id="tab-all" class="portfolio-tab px-3 py-1.5 rounded-xl font-bold transition-all bg-brand-950 text-white border border-brand-950">
+                                ทั้งหมด
+                            </button>
+                            <button onclick="filterPortfolio('automation')" id="tab-automation" class="portfolio-tab px-3 py-1.5 rounded-xl font-semibold transition-all bg-slate-50 text-slate-600 hover:bg-slate-100 border border-brand-100">
+                                <i class="fa-solid fa-gears mr-1 text-skyAccent-500"></i> อัตโนมัติ & บอท
+                            </button>
+                            <button onclick="filterPortfolio('rcm')" id="tab-rcm" class="portfolio-tab px-3 py-1.5 rounded-xl font-semibold transition-all bg-slate-50 text-slate-600 hover:bg-slate-100 border border-brand-100">
+                                <i class="fa-solid fa-file-invoice-dollar mr-1 text-skyAccent-500"></i> รายได้ & ประกัน
+                            </button>
+                            <button onclick="filterPortfolio('data')" id="tab-data" class="portfolio-tab px-3 py-1.5 rounded-xl font-semibold transition-all bg-slate-50 text-slate-600 hover:bg-slate-100 border border-brand-100">
+                                <i class="fa-solid fa-chart-pie mr-1 text-skyAccent-500"></i> แดชบอร์ด Grafana
+                            </button>
+                        </div>
+
+                        <!-- Standardized Portfolio Responsive Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5" id="portfolio-grid">
+                            
+                            <!-- Project Card 1 (Automation) -->
+                            <div data-category="automation" onclick="openProjectModal(1)" class="print-hidden-card portfolio-card bg-white p-6 rounded-2xl border border-brand-200/80 shadow-sm hover:shadow-glow hover:border-skyAccent-400 cursor-pointer transition-all duration-300 transform hover:-translate-y-1 h-full min-h-[220px] flex flex-col justify-between">
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center">
+                                        <span class="bg-skyAccent-50 text-skyAccent-700 font-bold px-2.5 py-1 rounded text-[9px] uppercase border border-skyAccent-100/60 tracking-wider">งานไอที & อัตโนมัติ</span>
+                                        <span class="text-[9px] font-bold text-emerald-600 flex items-center gap-1 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100"><i class="fa-solid fa-circle-check"></i> เสร็จสิ้น</span>
+                                    </div>
+                                    <h5 class="font-extrabold text-brand-950 text-sm flex items-center gap-1.5 leading-tight">
+                                        <i class="fa-solid fa-gears text-skyAccent-500 text-xs"></i>
+                                        ระบบรายงานประกันสังคมอัตโนมัติ
+                                    </h5>
+                                    <p class="text-slate-500 text-xs leading-relaxed font-light line-clamp-3">
+                                        พัฒนาการเชื่อมโยงระบบรายงาน โดยเชื่อมต่อดึงข้อมูลโดยตรงจากระบบสารสนเทศโรงพยาบาล (HIS) เพื่อสร้างรายงานเอกสาร สปส 2-15 และ สปส 2-09 โดยอัตโนมัติ
+                                    </p>
+                                </div>
+                                <div class="pt-4 mt-2 border-t border-brand-100/60 flex justify-between items-center text-[10px]">
+                                    <span class="font-medium text-slate-400">เครื่องมือ: HIS Sync, SQL</span>
+                                    <span class="text-skyAccent-600 font-bold flex items-center gap-1 hover:text-skyAccent-700">อ่านต่อ <i class="fa-solid fa-chevron-right text-[7px]"></i></span>
+                                </div>
+                            </div>
+
+                            <!-- Project Card 2 (Automation) -->
+                            <div data-category="automation" onclick="openProjectModal(2)" class="print-hidden-card portfolio-card bg-white p-6 rounded-2xl border border-brand-200/80 shadow-sm hover:shadow-glow hover:border-skyAccent-400 cursor-pointer transition-all duration-300 transform hover:-translate-y-1 h-full min-h-[220px] flex flex-col justify-between">
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center">
+                                        <span class="bg-skyAccent-50 text-skyAccent-700 font-bold px-2.5 py-1 rounded text-[9px] uppercase border border-skyAccent-100/60 tracking-wider">งานไอที & อัตโนมัติ</span>
+                                        <span class="text-[9px] font-bold text-emerald-600 flex items-center gap-1 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100"><i class="fa-solid fa-robot"></i> ใช้งานจริง</span>
+                                    </div>
+                                    <h5 class="font-extrabold text-brand-950 text-sm flex items-center gap-1.5 leading-tight">
+                                        <i class="fa-solid fa-bell text-skyAccent-500 text-xs"></i>
+                                        ระบบแจ้งเตือนผ่าน Telegram Alerts
+                                    </h5>
+                                    <p class="text-slate-500 text-xs leading-relaxed font-light line-clamp-3">
+                                        ออกแบบคำสั่ง SQL สแกนตรวจสอบความผิดพลาดด้านเวชระเบียนแบบอัตโนมัติ และยิงแจ้งเตือนผ่าน API ของ Telegram เข้ากลุ่มทำงานเจ้าหน้าที่เพื่อสกัดกั้นข้อมูลคลาดเคลื่อนก่อนส่งอุทธรณ์
+                                    </p>
+                                </div>
+                                <div class="pt-4 mt-2 border-t border-brand-100/60 flex justify-between items-center text-[10px]">
+                                    <span class="font-medium text-slate-400">เครื่องมือ: SQL, Telegram API</span>
+                                    <span class="text-skyAccent-600 font-bold flex items-center gap-1 hover:text-skyAccent-700">อ่านต่อ <i class="fa-solid fa-chevron-right text-[7px]"></i></span>
+                                </div>
+                            </div>
+
+                            <!-- Project Card 3 (RCM) -->
+                            <div data-category="rcm" onclick="openProjectModal(3)" class="print-hidden-card portfolio-card bg-white p-6 rounded-2xl border border-brand-200/80 shadow-sm hover:shadow-glow hover:border-skyAccent-400 cursor-pointer transition-all duration-300 transform hover:-translate-y-1 h-full min-h-[220px] flex flex-col justify-between">
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center">
+                                        <span class="bg-skyAccent-50 text-skyAccent-700 font-bold px-2.5 py-1 rounded text-[9px] uppercase border border-skyAccent-100/60 tracking-wider">เรียกเก็บเงิน & ประกันภัย</span>
+                                        <span class="text-[9px] font-bold text-emerald-600 flex items-center gap-1 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100"><i class="fa-solid fa-chart-line"></i> สำเร็จสูง</span>
+                                    </div>
+                                    <h5 class="font-extrabold text-brand-950 text-sm flex items-center gap-1.5 leading-tight">
+                                        <i class="fa-solid fa-shield-virus text-skyAccent-500 text-xs"></i>
+                                        ปรับปรุงการจัดเก็บรายได้ & แก้ไข CV Deny
+                                    </h5>
+                                    <p class="text-slate-500 text-xs leading-relaxed font-light line-clamp-3">
+                                        พัฒนากระบวนการตรวจสอบข้อมูลตามมาตรฐานคุณภาพ เรียกเก็บค่ารักษาพยาบาลกองทุนต่างๆ และอุทธรณ์การปฏิเสธเคลมชดเชยค่ารักษาพยาบาล CV Deny เพื่อทวงคืนรายรับของโรงพยาบาล
+                                    </p>
+                                </div>
+                                <div class="pt-4 mt-2 border-t border-brand-100/60 flex justify-between items-center text-[10px]">
+                                    <span class="font-medium text-slate-400">เครื่องมือ: AAA, RCM Data Audit</span>
+                                    <span class="text-skyAccent-600 font-bold flex items-center gap-1 hover:text-skyAccent-700">อ่านต่อ <i class="fa-solid fa-chevron-right text-[7px]"></i></span>
+                                </div>
+                            </div>
+
+                            <!-- Project Card 4 (Data) -->
+                            <div data-category="data" onclick="openProjectModal(4)" class="print-hidden-card portfolio-card bg-white p-6 rounded-2xl border border-brand-200/80 shadow-sm hover:shadow-glow hover:border-skyAccent-400 cursor-pointer transition-all duration-300 transform hover:-translate-y-1 h-full min-h-[220px] flex flex-col justify-between">
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center">
+                                        <span class="bg-skyAccent-50 text-skyAccent-700 font-bold px-2.5 py-1 rounded text-[9px] uppercase border border-skyAccent-100/60 tracking-wider">วิเคราะห์แดชบอร์ด</span>
+                                        <span class="text-[9px] font-bold text-emerald-600 flex items-center gap-1 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100"><i class="fa-solid fa-circle-check"></i> เรียลไทม์</span>
+                                    </div>
+                                    <h5 class="font-extrabold text-brand-950 text-sm flex items-center gap-1.5 leading-tight">
+                                        <i class="fa-solid fa-chart-pie text-skyAccent-500 text-xs"></i>
+                                        Grafana BI Dashboard ติดตามผลรหัสโรค
+                                    </h5>
+                                    <p class="text-slate-500 text-xs leading-relaxed font-light line-clamp-3">
+                                        จัดทำแดชบอร์ดสรุปสถิติติดตามความสมบูรณ์ในการวินิจฉัยโรคและการลงรหัสหัตถการทางการแพทย์ของแพทย์เวชปฏิบัติ เพื่อวางแผนกำลังคนและประเมินสถิติโรงพยาบาลแบบเรียลไทม์
+                                    </p>
+                                </div>
+                                <div class="pt-4 mt-2 border-t border-brand-100/60 flex justify-between items-center text-[10px]">
+                                    <span class="font-medium text-slate-400">เครื่องมือ: Grafana, MySQL</span>
+                                    <span class="text-skyAccent-600 font-bold flex items-center gap-1 hover:text-skyAccent-700">อ่านต่อ <i class="fa-solid fa-chevron-right text-[7px]"></i></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- PORTFOLIO CARDS END -->
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- INTERACTIVE PORTFOLIO DETAIL MODAL -->
+    <div id="projectModal" class="no-print fixed inset-0 z-50 bg-brand-950/60 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-brand-200 transition-all transform scale-95 opacity-0 duration-300" id="modalContainer">
+            <!-- Modal Header -->
+            <div class="bg-brand-950 text-white p-4 md:p-5 flex justify-between items-center border-b border-white/5">
+                <div class="flex items-center space-x-2.5">
+                    <span id="modalCategoryBadge" class="bg-skyAccent-600 text-white text-[9px] font-bold px-2.5 py-1 rounded-lg uppercase tracking-wider">หมวดหมู่</span>
+                    <h4 class="font-bold text-xs text-skyAccent-300 tracking-wide">ข้อมูลสัมภาษณ์ความสำเร็จ</h4>
+                </div>
+                <button onclick="closeProjectModal()" class="text-white/60 hover:text-white transition text-xl font-bold p-1">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content inside custom vertical scrollbar -->
+            <div class="p-5 md:p-6 space-y-4 text-xs overflow-y-auto max-h-[70vh] custom-scrollbar">
+                <div>
+                    <h3 id="modalProjectTitle" class="text-sm md:text-base font-extrabold text-brand-950 leading-snug">ชื่อโครงการ</h3>
+                    <p class="text-[10px] text-skyAccent-600 mt-1 font-bold tracking-wide uppercase" id="modalTechStack">เทคโนโลยีที่ประยุกต์ใช้: -</p>
+                </div>
+
+                <hr class="border-slate-100">
+
+                <div class="space-y-3.5">
+                    <!-- Challenges -->
+                    <div class="bg-rose-50/50 p-3.5 rounded-2xl border border-rose-100">
+                        <h5 class="font-bold text-rose-950 flex items-center gap-1.5 mb-1 text-[11px]">
+                            <i class="fa-solid fa-triangle-exclamation text-rose-500"></i> ปัญหาและการสืบค้นวิเคราะห์ (Challenge)
+                        </h5>
+                        <p id="modalChallengeText" class="text-slate-600 leading-relaxed font-light text-[11px]">
+                            -
+                        </p>
+                    </div>
+
+                    <!-- Solutions -->
+                    <div class="bg-skyAccent-50/40 p-3.5 rounded-2xl border border-skyAccent-100">
+                        <h5 class="font-bold text-skyAccent-950 flex items-center gap-1.5 mb-1 text-[11px]">
+                            <i class="fa-solid fa-compass-drafting text-skyAccent-600"></i> แนวทางและขั้นตอนแก้ปัญหาของคุณโน้ต (Solution)
+                        </h5>
+                        <p id="modalSolutionText" class="text-slate-600 leading-relaxed font-light text-[11px]">
+                            -
+                        </p>
+                    </div>
+
+                    <!-- Impact KPIs -->
+                    <div class="bg-emerald-50/50 p-3.5 rounded-2xl border border-emerald-100">
+                        <h5 class="font-bold text-emerald-950 flex items-center gap-1.5 mb-1 text-[11px]">
+                            <i class="fa-solid fa-trophy text-emerald-600"></i> ความสำเร็จต่อโรงพยาบาล (Impact)
+                        </h5>
+                        <p id="modalImpactText" class="text-slate-700 leading-relaxed font-semibold text-[11px]">
+                            -
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="bg-slate-50 px-5 py-4 flex justify-end border-t border-slate-200/60">
+                <button onclick="closeProjectModal()" class="bg-brand-950 hover:bg-brand-900 text-white font-bold py-2 px-5 rounded-xl text-xs transition shadow-sm">
+                    ปิดหน้าต่างความสำเร็จ
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- App Main Footer -->
+    <footer class="no-print bg-brand-950 text-slate-400 py-8 px-4 border-t border-white/5 text-center text-[11px] space-y-2 mt-auto">
+        <p class="font-bold tracking-widest text-[9px] text-skyAccent-400 uppercase">Interactive Portfolio Application System</p>
+        <p class="font-light">อ้างอิงข้อมูลประวัติจากไฟล์เอกสาร "khankarit Resume (3).pdf" และ "mpdf (1).pdf"</p>
+    </footer>
+
+    <!-- Clipboard Alert component -->
+    <div id="copyToast" class="no-print fixed bottom-6 left-1/2 -translate-x-1/2 bg-brand-950 text-white text-xs font-bold py-2.5 px-5 rounded-2xl shadow-2xl transition-all opacity-0 pointer-events-none transform translate-y-2 flex items-center gap-2 border border-white/10 z-55">
+        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+        <span id="copyToastMsg">คัดลอกลงคลิปบอร์ดแล้ว!</span>
+    </div>
+
+    <script>
+        // Project Detail Database Object for Interactive Portfolio Modal
+        const projectDetails = {
+            1: {
+                title: "ระบบรายงานประกันสังคมอัตโนมัติ (สปส 2-15 & 2-09)",
+                category: "งานไอที & อัตโนมัติ",
+                tech: "MySQL Data Query, Connector Pipe to HIS System",
+                challenge: "ในอดีตการจัดเตรียมเอกสารขอชดเชยค่ารักษากองทุนประกันสังคม (สปส 2-15 และ สปส 2-09) ต้องทำมือด้วยแผ่นกระดาษหรือลงทีละรายประวัติ สะสมจนงานดีเลย์และข้อมูลสะกดผิดสูง",
+                solution: "ศึกษาดึงท่อฐานข้อมูลสารสนเทศโรงพยาบาล (HIS) ค้นรหัสประกันสังคมคนไข้โดยตรง แล้วนำมาเขียนคำสั่ง SQL Query สร้างกระบวนการส่งออกฟอร์มรายงานแบบคำนวณและกรอกข้อมูลคนไข้ให้อัตโนมัติ",
+                impact: "ย่นระยะเวลารอจัดทำเอกสารและขั้นตอนตรวจรายชื่อของเจ้าหน้าที่กองทุนลง 80% ตัดปัญหาความซ้ำซ้อนและปัญหาสะกดชื่อคลาดเคลื่อน ส่งผลให้การตั้งเรื่องเบิกเงินชดเชยรายได้สมบูรณ์รวดเร็วขึ้น"
+            },
+            2: {
+                title: "ระบบส่งข้อความเฝ้าระวังคุณภาพสถิติผ่าน Telegram alerts",
+                category: "งานไอที & อัตโนมัติ",
+                tech: "Telegram API Scripting, MySQL Logic Filters",
+                challenge: "ข้อวินิจฉัยทางการแพทย์ รหัสโรค หรือหัตถการมักถูกกรอกไม่สมบูรณ์ในช่วงปิดรอบเคลม เช่น อายุ-เพศไม่ตรงกับเงื่อนไขรหัสโรค ส่งผลให้พบข้อผิดพลาดช้าและตรวจแก้ไขลำบากภายหลัง",
+                solution: "เขียนสคริปต์สแกนตรวจสอบความผิดปกติทางรหัสเวชสถิติตาม Standard Coding Guideline แล้วส่งสัญญาณแจ้งเตือนการบันทึกข้อมูลไม่ถูกต้องแบบเรียลไทม์ เข้ากลุ่มแชท Telegram บอร์ดเจ้าหน้าที่โดยทันที",
+                impact: "ทำให้ทีมเวชสถิติและทีมประเมินคุณภาพข้อมูลตรวจสอบเห็นเป้าหมาย และแก้ไขความถูกต้องของสถิติคนไข้ร่วมกับแพทย์ผู้รักษาได้ภายใน 24 ชม. ไม่สะสมเคสผิดพลาดไปช่วงปิดงวดสิ้นเดือน"
+            },
+            3: {
+                title: "ปรับปรุงกระบวนการจัดเก็บรายได้ของโรงพยาบาลและการแก้ CV Deny",
+                category: "เรียกเก็บค่ารักษาพยาบาล & บริหารรายได้",
+                tech: "RCM Data Audit Software, AAA Program, Advanced Excel Pivot",
+                challenge: "กองทุน สปสช. หรือประกันสังคมมักปฏิเสธจ่ายชดเชย (CV Deny) กลับมายังบัญชีลูกหนี้โรงพยาบาล อันเกิดจากรหัสโรคคลาดเคลื่อน หรือไม่พบหลักฐานเวชระเบียนที่สมบูรณ์ตามแนวทางการตรวจสอบ",
+                solution: "นำโปรแกรม RCM Data Audit และ AAA เข้ามาใช้คัดกรอง และเปรียบเทียบตารางชดเชยประวัติกับทะเบียนคุมสลิปเงินลูกหนี้ พร้อมประสานจัดตั้งกระบวนการเคลียร์อุทธรณ์อย่างรัดกุม",
+                impact: "สามารถลดอัตราและแก้ไขเคส CV Deny ทวงคืนเงินยอดค้างชดเชยของกองทุนต่าง ๆ กลับมาให้โรงพยาบาลโนนดินแดงได้อย่างมั่นคง และอุดช่องโหว่รายได้ของสถาบัน"
+            },
+            4: {
+                title: "พัฒนา Grafana BI Dashboard ติดตามการลงวินิจฉัยและรหัสโรคของแพทย์",
+                category: "วิเคราะห์แดชบอร์ด & BI",
+                tech: "Grafana Dashboards, SQL Analytics, Database Connector",
+                challenge: "ฝ่ายบริหารและคณะกรรมการควบคุมคุณภาพเวชระเบียนไม่ทราบสถานะสัดส่วนการลงสรุปโรคของแต่ละแผนกบริการว่าเกิดคอขวดสะสมจำนวนเท่าใดแบบเรียลไทม์เพื่อจัดการประเมินรอบเว้นรอบ",
+                solution: "เชื่อมโยงท่อข้อมูล (Data Pipeline) จากระบบฐานข้อมูลหลักเพื่อป้อนให้แสดงผลกราฟสถิติสำคัญบน Grafana แดชบอร์ด ติดตามสถานะสรุปการวินิจฉัยโรค รหัสโรค รหัสหัตถการ และค่าน้ำหนักสัมพัทธ์รายสัปดาห์",
+                impact: "ยกระดับความโปร่งใสในข้อมูลเวชสถิติ ฝ่ายบริหารสามารถเห็นสัดส่วนงานค้างสะสม และประเมินอัตราความเร็วความถูกต้องในการสรุปโรคของบุคลากรทางการแพทย์แต่ละแผนกได้ในแดชบอร์ดเดียว"
+            }
+        };
+
+        // Switch Tabs Logic based on Vertical UI from "image_7635a1.jpg" (adapted to swipe bar on mobile)
+        function switchInfoTab(tabId) {
+            // Hide all content blocks
+            const contents = document.querySelectorAll('.info-tab-content');
+            contents.forEach(content => content.classList.add('hidden'));
+
+            // Show current content block
+            const activeContent = document.getElementById(`content-tab-${tabId}`);
+            if (activeContent) activeContent.classList.remove('hidden');
+
+            // Reset tab styles to inactive grey text format
+            const buttons = document.querySelectorAll('.info-tab-button');
+            buttons.forEach(btn => {
+                btn.className = "info-tab-button flex items-center justify-between gap-3 px-4 py-3 rounded-xl font-bold text-xs border transition-all duration-200 bg-transparent border-transparent text-slate-600 hover:bg-slate-50 hover:text-brand-950";
+            });
+
+            // Set current active button styles (Matching vertical tab layout glow and blue text)
+            const activeBtn = document.getElementById(`btn-tab-${tabId}`);
+            if (activeBtn) {
+                activeBtn.className = "info-tab-button flex items-center justify-between gap-3 px-4 py-3 rounded-xl font-bold text-xs border transition-all duration-200 bg-skyAccent-50 border-skyAccent-100 text-skyAccent-700 shadow-sm";
+            }
+        }
+
+        // Open Detail Modal
+        function openProjectModal(id) {
+            const data = projectDetails[id];
+            if (!data) return;
+
+            document.getElementById('modalProjectTitle').innerText = data.title;
+            document.getElementById('modalCategoryBadge').innerText = data.category;
+            document.getElementById('modalTechStack').innerText = `เทคโนโลยี/เครื่องมือหลัก: ${data.tech}`;
+            document.getElementById('modalChallengeText').innerText = data.challenge;
+            document.getElementById('modalSolutionText').innerText = data.solution;
+            document.getElementById('modalImpactText').innerText = data.impact;
+
+            const modal = document.getElementById('projectModal');
+            const container = document.getElementById('modalContainer');
+            
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                container.classList.remove('scale-95', 'opacity-0');
+                container.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        // Close Detail Modal
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            const container = document.getElementById('modalContainer');
+            
+            container.classList.remove('scale-100', 'opacity-100');
+            container.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Filter Portfolio Grid on specific tabs
+        function filterPortfolio(category) {
+            const cards = document.querySelectorAll('.portfolio-card');
+            const tabs = document.querySelectorAll('.portfolio-tab');
+            
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-brand-950', 'text-white', 'border-brand-950');
+                tab.classList.add('bg-slate-50', 'text-slate-600', 'hover:bg-slate-100', 'border-brand-100');
+            });
+            
+            const activeTab = document.getElementById(`tab-${category}`);
+            if (activeTab) {
+                activeTab.classList.remove('bg-slate-50', 'text-slate-600', 'hover:bg-slate-100', 'border-brand-100');
+                activeTab.classList.add('bg-brand-950', 'text-white', 'border-brand-950');
+            }
+
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Copy utilities for embedded elements (iframe protection)
+        function copyToClipboard(text) {
+            const tempEl = document.createElement('textarea');
+            tempEl.value = text;
+            document.body.appendChild(tempEl);
+            tempEl.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempEl);
+            
+            showToast(`คัดลอก: "${text}" เรียบร้อยแล้ว`);
+        }
+
+        // Toast Component Trigger
+        function showToast(message) {
+            const toast = document.getElementById('copyToast');
+            const toastMsg = document.getElementById('copyToastMsg');
+            toastMsg.innerText = message;
+            
+            toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+            toast.classList.add('opacity-100', 'translate-y-0');
+            
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+                toast.classList.remove('opacity-100', 'translate-y-0');
+            }, 2500);
+        }
+
+        // Upload Profile Preview image dynamically
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('profilePreview');
+                output.src = reader.result;
+                showToast("เปลี่ยนรูปโปรไฟล์เรียบร้อยแล้ว");
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        // Live Editor Mode Toggle for Interviewer Adjustments
+        let isEditMode = false;
+        function toggleEditMode() {
+            isEditMode = !isEditMode;
+            
+            const editableElements = [
+                'field-fullname-th', 'field-fullname-en', 'field-summary', 
+                'contact-phone', 'contact-email', 'contact-email-alt', 'contact-line', 'contact-address',
+                'p-dob', 'p-age', 'p-nation', 'p-military', 'p-weight', 'p-marry',
+                'work1-title', 'work1-salary', 'work2-title', 'edu-inst', 'edu-degree'
+            ];
+            
+            const btnText = document.getElementById('editText');
+            const btnIcon = document.getElementById('editIcon');
+            const toggleBtn = document.getElementById('toggleEditBtn');
+
+            if (isEditMode) {
+                // Open edit fields
+                editableElements.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        el.contentEditable = "true";
+                        el.classList.add('bg-amber-50', 'ring-2', 'ring-amber-300', 'p-1', 'rounded-lg', 'transition-all');
+                    }
+                });
+                
+                btnText.innerText = "ปิดโหมดแก้ไข";
+                btnIcon.className = "fa-solid fa-lock text-emerald-400";
+                toggleBtn.classList.remove('bg-white/5', 'text-skyAccent-400', 'border-skyAccent-500/20');
+                toggleBtn.classList.add('bg-emerald-600', 'text-white', 'border-emerald-500');
+                
+                showToast("🛠️ เปิดโหมดแก้ไข: สามารถคลิกพิมพ์บนข้อความประวัติได้โดยตรง");
+            } else {
+                // Lock edit fields
+                editableElements.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        el.contentEditable = "false";
+                        el.classList.remove('bg-amber-50', 'ring-2', 'ring-amber-300', 'p-1', 'rounded-lg');
+                    }
+                });
+                
+                btnText.innerText = "เปิดโหมดแก้ไขประวัติ";
+                btnIcon.className = "fa-regular fa-pen-to-square";
+                toggleBtn.classList.remove('bg-emerald-600', 'text-white', 'border-emerald-500');
+                toggleBtn.classList.add('bg-white/5', 'text-skyAccent-400', 'border-skyAccent-500/20');
+                
+                showToast("🔒 บันทึกและล็อกการแก้ไขข้อความเรียบร้อย");
+            }
+        }
+    </script>
+</body>
+</html>
