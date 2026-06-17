@@ -225,7 +225,7 @@
                 <div class="bg-white p-5 rounded-3xl border border-brand-200/60 shadow-premium-soft flex flex-col gap-2">
                     <i class="fa-solid fa-chart-line text-skyAccent-600 text-lg"></i>
                     <div>
-                        <h5 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">GPA (GPAX)</h5>
+                        <h5 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">GPAX</h5>
                         <p class="text-sm font-extrabold text-emerald-600 mt-0.5">3.57</p>
                         <p class="text-[10px] text-slate-400">เกรดเฉลี่ยสะสม</p>
                     </div>
@@ -842,7 +842,7 @@
             <div class="bg-brand-950 text-white p-4 md:p-5 flex justify-between items-center border-b border-white/5">
                 <div class="flex items-center space-x-2.5">
                     <span id="modalCategoryBadge" class="bg-skyAccent-600 text-white text-[9px] font-bold px-2.5 py-1 rounded-lg uppercase tracking-wider">หมวดหมู่</span>
-                    <h4 class="font-bold text-xs text-skyAccent-300 tracking-wide">ข้อมูลสัมภาษณ์ความสำเร็จ</h4>
+                    <h4 class="font-bold text-xs text-skyAccent-300 tracking-wide">รายละเอียดข้อมูล</h4>
                 </div>
                 <button onclick="closeProjectModal()" class="text-white/60 hover:text-white transition text-xl font-bold p-1">
                     <i class="fa-solid fa-xmark"></i>
@@ -862,7 +862,7 @@
                     <!-- Challenges -->
                     <div class="bg-rose-50/50 p-3.5 rounded-2xl border border-rose-100">
                         <h5 class="font-bold text-rose-950 flex items-center gap-1.5 mb-1 text-[11px]">
-                            <i class="fa-solid fa-triangle-exclamation text-rose-500"></i> ปัญหาและการสืบค้นวิเคราะห์ (Challenge)
+                            <i class="fa-solid fa-triangle-exclamation text-rose-500"></i> ปัญหาและการสืบค้นวิเคราะห์
                         </h5>
                         <p id="modalChallengeText" class="text-slate-600 leading-relaxed font-light text-[11px]">
                             -
@@ -872,7 +872,7 @@
                     <!-- Solutions -->
                     <div class="bg-skyAccent-50/40 p-3.5 rounded-2xl border border-skyAccent-100">
                         <h5 class="font-bold text-skyAccent-950 flex items-center gap-1.5 mb-1 text-[11px]">
-                            <i class="fa-solid fa-compass-drafting text-skyAccent-600"></i> แนวทางและขั้นตอนแก้ปัญหาของคุณโน้ต (Solution)
+                            <i class="fa-solid fa-compass-drafting text-skyAccent-600"></i> แนวทางและขั้นตอนแก้ปัญหา
                         </h5>
                         <p id="modalSolutionText" class="text-slate-600 leading-relaxed font-light text-[11px]">
                             -
@@ -882,7 +882,7 @@
                     <!-- Impact KPIs -->
                     <div class="bg-emerald-50/50 p-3.5 rounded-2xl border border-emerald-100">
                         <h5 class="font-bold text-emerald-950 flex items-center gap-1.5 mb-1 text-[11px]">
-                            <i class="fa-solid fa-trophy text-emerald-600"></i> ความสำเร็จต่อโรงพยาบาล (Impact)
+                            <i class="fa-solid fa-trophy text-emerald-600"></i> ความสำเร็จ
                         </h5>
                         <p id="modalImpactText" class="text-slate-700 leading-relaxed font-semibold text-[11px]">
                             -
@@ -894,7 +894,7 @@
             <!-- Modal Footer -->
             <div class="bg-slate-50 px-5 py-4 flex justify-end border-t border-slate-200/60">
                 <button onclick="closeProjectModal()" class="bg-brand-950 hover:bg-brand-900 text-white font-bold py-2 px-5 rounded-xl text-xs transition shadow-sm">
-                    ปิดหน้าต่างความสำเร็จ
+                    ปิดหน้าต่าง
                 </button>
             </div>
         </div>
@@ -910,7 +910,7 @@
         const projectDetails = {
             1: {
                 title: "ระบบรายงานประกันสังคมอัตโนมัติ (สปส 2-15 และ สปส 2-09)",
-                category: "งานไอที & อัตโนมัติ",
+                category: "อัตโนมัติ",
                 tech: "MySQL, Report Designer",
                 challenge: "ในอดีตการจัดเตรียมเอกสารขอชดเชยค่ารักษากองทุนประกันสังคม (สปส 2-15 และ สปส 2-09) ต้องบันทึกด้วยลายมือลงในแบบฟอร์มทีละราย ทำให้เกิดปัญหาการบันทึกล่าช้า เสี่ยงต่อการบันทึกข้อมูลผิดพลาด",
                 solution: "สร้างกระบวนการส่งออกฟอร์มรายงานแบบคำนวณและกรอกข้อมูลคนไข้ให้อัตโนมัติลงแบบฟอร์ม โดยใช้ความรู้ด้าน Report Designer และ SQL ในการสร้างรายงาน ปรับกระบวนการทำงานให้จัดเก็บเอกสารก่อนผู้ป่วยเข้ารับบริการ",
@@ -918,7 +918,7 @@
             },
             2: {
                 title: "ระบบส่งข้อมูลแจ้งเตือนผ่าน Line messaging api",
-                category: "งานไอที & อัตโนมัติ",
+                category: "อัตโนมัติ",
                 tech: "Line Nodejs",
                 challenge: "การติดตามเวชระเบียน งานเวชสถิติต้องเข้าระบบ HIS เพื่อสืบค้นข้อมูล ว่าเวชระเบียนฉบับนั้น ตอนนี้ สถานะอยู่ที่หน่วยงานใด การสืบค้นข้อมูลใช้เวลานาน เนื่องจากสืบค้นได้ทีละราย",
                 solution: "ใช้ระบบ LINE messaging api ส่งข้อมูลจากระบบ HIS เข้า Line Group",
@@ -926,7 +926,7 @@
             },
             3: {
                 title: "ปรับปรุงกระบวนการจัดเก็บรายได้ของโรงพยาบาล",
-                category: "เรียกเก็บค่ารักษาพยาบาล & บริหารรายได้",
+                category: "ศูนย์จัดเก็บรายได้",
                 tech: "Program AAA",
                 challenge: "กระบวนการในการจัดเก็บรายได้ค่ารักษาพยาบาล จะต้องมีการตั้งลูกหนี้ค่ารักษาพยาบาลเพื่อนำมาเป็นทะเบียนคุมลูกหนี้ค่ารักษาพยาบาล ส่งงานบัญชีเพื่อบันทึกลูกหนี้ เนื่องจากการตั้งลูกหนี้ค่ารักษาพยาบาลมีหลากหลายกองทุน ใช้วิธีการส่งออกข้อมูลจาก HIS เพื่อส่งให้งานบัญชีบันทึกข้อมูล ทำให้เกิดความคลาดเคลื่อน และล่าช้าในการบันทึกบัญชี ใช้เวลา 5 วันกว่าจะบันทึกบัญชีสำเร็จ",
                 solution: "นำโปรแกรม AAA เข้ามาใช้ในการตั้งลูกหนี้ค่ารักษาพยาบาล จัดทำทะเบียนคุมลูกหนี้ พร้อมส่งข้อมูลให้งานบัญชี",
@@ -934,7 +934,7 @@
             },
             4: {
                 title: "พัฒนาระบบรายงานการติดตามข้อมูลผิดพลาด",
-                category: "เรียกเก็บค่ารักษาพยาบาล & บริหารรายได้",
+                category: "Dashboard",
                 tech: "SQL Program Data Audit",
                 challenge: "ความไม่สมบูรณ์และข้อมูลตกหล่นจากการบันทึกผ่านระบบ HIS ของหน่วยงานต่าง ๆ ส่งผลกระทบโดยตรงต่อความถูกต้องของเวชระเบียนและประสิทธิภาพในกระบวนการเรียกเก็บค่ารักษาพยาบาล",
                 solution: "พัฒนาและประยุกต์ใช้โปรแกรม Data Audit ร่วมกับ SQL เพื่อวิเคราะห์และคัดกรองข้อมูลที่ไม่ถูกต้องแบบเชิงรุก พร้อมปรับกระบวนการทำงานให้มีการตรวจสอบความสมบูรณ์ของข้อมูลภายใน 1 วันหลังการให้บริการ เพื่อแจ้งเตือนและแก้ไขข้อมูลให้ครบถ้วนทันท่วงที",
@@ -942,7 +942,7 @@
             },
             5: {
                 title: "พัฒนา Dashboard ติดตามสรุปเวชระเบียน และการให้รหัสทางการแพย์",
-                category: "วิเคราะห์แดชบอร์ด & BI",
+                category: "Dashboard",
                 tech: "Grafana Dashboards, SQL",
                 challenge:"กระบวนการติดตามสถานะการสรุปเวชระเบียนและรหัสการวินิจฉัยผ่านระบบ HIS มีความล่าช้าและขาดการแสดงผลข้อมูลแบบภาพรวม ทำให้ยากต่อการบริหารจัดการและติดตามงานคงค้างในแต่ละขั้นตอน",
                 solution: "พัฒนา Dashboard อัจฉริยะด้วย Grafana เชื่อมต่อฐานข้อมูลเพื่อแสดงผลสถานะการสรุปเวชระเบียนของแพทย์และการลงรหัสทางการแพทย์แบบเรียลไทม์ พร้อมฟังก์ชันแจ้งเตือนเมื่อพบงานคงค้างสะสม",
